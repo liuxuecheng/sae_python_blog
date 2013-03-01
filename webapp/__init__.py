@@ -4,5 +4,5 @@ app = Flask(__name__)
 app.debug = True
 
 @app.route('/')
-def index:
+def index():
     return "index"
