@@ -1,4 +1,4 @@
 import sqlalchemy
 
 def get_version():
-    print sqlalchemy.__version__
+    return sqlalchemy.__version__
