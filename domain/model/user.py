@@ -8,8 +8,7 @@ class User(Base):
 	name = Column(String(20))
 	password = Column(String(16))
 
-	def __init__(self, id, name):
-		self.id = id
+	def __init__(self, name):
 		self.name = name
 
 	def __repr__(self):
