@@ -1,6 +1,6 @@
 from flask import Blueprint
 from domain import engine
-from domain.model import Base
+from domain.model.user import Base
 
 db_page = Blueprint('db_page', __name__)
 
