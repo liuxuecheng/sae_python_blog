@@ -6,7 +6,7 @@ class User(Base):
 
 	id = Column(Integer, primary_key=True)
 	name = Column(String)
-	password = Column(string)
+	password = Column(String)
 
 	def __init__(self, id, name):
 		self.id = id
