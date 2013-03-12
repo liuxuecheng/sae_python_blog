@@ -5,8 +5,8 @@ class User(Base):
 	__tablename__ = 'user'
 
 	id = Column(Integer, primary_key=True)
-	name = Column(String)
-	password = Column(String)
+	name = Column(String(20))
+	password = Column(String(16))
 
 	def __init__(self, id, name):
 		self.id = id
