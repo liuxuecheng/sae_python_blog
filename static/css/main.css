@@ -3,6 +3,7 @@ body{
 }
 
 .conl{
+	border-radius: 2px 2px 2px 2px;
 	padding: 10px 0 0 20px;
 	background: none repeat scroll 0 0 #FFFFFF;
     min-height: 800px;
