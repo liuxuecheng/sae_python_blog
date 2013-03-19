@@ -8,7 +8,7 @@ body{
 
 .basediv{
 	border-radius: 2px 2px 2px 2px;
-	padding: 10px 10px 0 20px;
+	padding: 10px 10px 20px 20px;
 	background: none repeat scroll 0 0 #FFFFFF;
 	box-shadow: 2px 3px 3px rgba(0, 0, 0, 0.1);	
 }
