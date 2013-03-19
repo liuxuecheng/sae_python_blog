@@ -17,3 +17,14 @@ body{
 	background: none repeat scroll 0 0 #FFFFFF;
 	box-shadow: 2px 3px 3px rgba(0, 0, 0, 0.1);	
 }
+
+.titleBar h4 {
+    border-bottom: 2px solid #F73E3E;
+    bottom: -2px;
+    float: left;
+    font: 20px/1.2 微软雅黑,黑体;
+    padding-bottom: 9px;
+    padding-right: 28px;
+    position: relative;
+    white-space: nowrap;
+}
