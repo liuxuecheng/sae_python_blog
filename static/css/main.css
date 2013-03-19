@@ -18,6 +18,11 @@ body{
 	box-shadow: 2px 3px 3px rgba(0, 0, 0, 0.1);	
 }
 
+.titleBar {
+    border-bottom: 2px solid #F7F7F7;
+    vertical-align: bottom;
+}
+
 .titleBar h4 {
     border-bottom: 2px solid #F73E3E;
     bottom: -2px;
@@ -27,4 +32,12 @@ body{
     padding-right: 28px;
     position: relative;
     white-space: nowrap;
+}
+
+.titleBar:after, .titleBar-chose:after, .tabBar:after, .poplayer-letter-ft:after {
+    clear: both;
+    content: ".";
+    display: block;
+    height: 0;
+    visibility: hidden;
 }
