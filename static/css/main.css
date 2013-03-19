@@ -21,17 +21,19 @@ body{
 .titleBar {
     border-bottom: 2px solid #F7F7F7;
     vertical-align: bottom;
+    margin-bottom: 10px;
 }
 
 .titleBar h4 {
     border-bottom: 2px solid #F73E3E;
     bottom: -2px;
     float: left;
-    font: 12px;
+    font-size: 14px;
     padding-bottom: 9px;
     padding-right: 28px;
     position: relative;
     white-space: nowrap;
+    margin:0;
 }
 
 .titleBar:after, .titleBar-chose:after, .tabBar:after, .poplayer-letter-ft:after {
