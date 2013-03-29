@@ -1,4 +1,4 @@
-from flask import Buleprint, render_template
+from flask import Blueprint, render_template
 
 user_page = Buleprint("user_page", __name__)
 
