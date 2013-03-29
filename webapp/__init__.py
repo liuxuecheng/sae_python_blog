@@ -2,6 +2,7 @@
 from flask import Flask
 from webapp.main.views import main_page
 from webapp.mydb.db import db_page
+from webapp.user.user import user_page
 
 #app config
 app = Flask(__name__)
