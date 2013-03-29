@@ -10,3 +10,4 @@ app.debug = True
 #register app
 app.register_blueprint(main_page)
 app.register_blueprint(db_page)
+
