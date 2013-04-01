@@ -3,10 +3,11 @@ from flask import Flask
 from webapp.main.views import main_page
 from webapp.mydb.db import db_page
 from webapp.user.views import user_page
+import webapp.user.setting as setting
 
 #app config
 app = Flask(__name__)
-app.config.from_object("setting.ini")
+app.config.from_object(setting)
 
 #register app
 app.register_blueprint(main_page)
