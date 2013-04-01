@@ -1,6 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
-  {% include '/common/head.html' with css %}
+<head>
+<meta charset="utf-8">
+<title>{% block title %}{% endblock %} - Fainle bolg</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="">
+<meta name="author" content="">
+<!-- Le styles -->
+{% include '/common/basecss.html' %}
+{% block css %}
+{% endblock %}
+{% include '/common/basejs.html' %}
+</head>
   <body>
   	{% include '/common/top.html' %}
     <div class="container">
