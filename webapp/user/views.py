@@ -13,6 +13,7 @@ def register():
 @user_page.route("/user/login", methods=("POST","GET"))
 def login():
 	login_form = LoginForm()
+	login_form.validate()
 	return render_template("/user/login.html",
 			loginform=login_form
 		)
