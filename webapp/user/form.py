@@ -1,5 +1,5 @@
 from package.wtforms import Form, TextField, validators
-from package.wtforms.validators import Required, Length, ValidationError
+from package.wtforms.validators import Required, Length, ValidationError, Email
 from domain.model.user import User
 
 
