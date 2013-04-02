@@ -5,11 +5,14 @@
 <form class="form-signin" method="post" action="/user/login">
   <h2 class="form-signin-heading">登录</h2>
   {{ loginform.csrf_token }}
-  {{ loginform.email(placeholder='Email address',class='input-block-level')}}<a title="" data-placement="top" data-toggle="tooltip" href="#" data-original-title="Tooltip on top">Tooltip on top</a>
-  {{ '%s' %loginform.errors.email[0] if loginform.errors.email }}
-  {% if loginform.errors.email %}{{ loginform.errors.email[0] }}{% endif %}
+  {{ loginform.email(placeholder='Email address',class='input-block-level')}}
+  {% if loginform.errors.email %}
+  	<p class="text-error">{{ loginform.errors.email[0] }}</p>
+  {% endif %}
   {{ loginform.password(placeholder='Password',class='input-block-level') }}
-  {% if loginform.errors.password %}{{ loginform.errors.password[0] }}{% endif %}
+  {% if loginform.errors.password %}
+  	<p class="text-error">{{ loginform.errors.password[0] }}</p>
+  {% endif %}
   <label class="checkbox">
     <input type="checkbox" value="remember-me" name="rememberme">记住我
   </label>
