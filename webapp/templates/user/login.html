@@ -5,7 +5,7 @@
 <form class="form-signin" method="post" action="/user/login">
   <h2 class="form-signin-heading">登录</h2>
   {{ loginform.csrf_token }}
-  {{ loginform.email(placeholder='Email address',class='input-block-level')}}<a href="#" data-toggle="tooltip" title="first tooltip">hover over me</a>
+  {{ loginform.email(placeholder='Email address',class='input-block-level')}}<a title="" data-placement="top" data-toggle="tooltip" href="#" data-original-title="Tooltip on top">Tooltip on top</a>
   {{ '%s' %loginform.errors.email[0] if loginform.errors.email }}
   {% if loginform.errors.email %}{{ loginform.errors.email[0] }}{% endif %}
   {{ loginform.password(placeholder='Password',class='input-block-level') }}
