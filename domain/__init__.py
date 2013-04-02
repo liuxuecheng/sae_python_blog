@@ -6,4 +6,4 @@ db_link = 'mysql+mysqldb://' + sae.const.MYSQL_USER + ':' + sae.const.MYSQL_PASS
 
 engine = create_engine(db_link)
 Session = sessionmaker(bind=engine)
-session = Session()
+db_session = Session()
