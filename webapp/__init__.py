@@ -14,4 +14,13 @@ app.register_blueprint(main_page)
 app.register_blueprint(db_page)
 app.register_blueprint(user_page)
 
-#
+#app before request
+@app.before_request
+def before_request():
+	pass
+
+
+#app teardown request
+@app.teardown_request
+def teardown_request():
+	pass		
