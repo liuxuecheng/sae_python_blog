@@ -4,10 +4,10 @@
 {% block content %}
 <form class="form-signin" method="post" action="/user/login">
   <h2 class="form-signin-heading">登录</h2>
-  <input type="text" class="input-block-level" placeholder="Email address">
-  <input type="password" class="input-block-level" placeholder="Password">
+  <input type="text" class="input-block-level" placeholder="Email address" name='email'>
+  <input type="password" class="input-block-level" placeholder="Password" name="password">
   <label class="checkbox">
-    <input type="checkbox" value="remember-me">记住我
+    <input type="checkbox" value="remember-me" name="rememberme">记住我
   </label>
   <button class="btn btn-large btn-primary" type="submit">登录</button>
 </form>
