@@ -2,7 +2,7 @@ from __future__ import unicode_literals
 
 import re
 
-from wtforms.compat import string_types, text_type
+from package.wtforms.compat import string_types, text_type
 
 __all__ = (
     'DataRequired', 'data_required', 'Email', 'email', 'EqualTo', 'equal_to',

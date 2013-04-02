@@ -5,9 +5,9 @@ import decimal
 import itertools
 import time
 
-from wtforms import widgets
-from wtforms.compat import text_type, izip
-from wtforms.validators import StopValidation
+from package.wtforms import widgets
+from package.wtforms.compat import text_type, izip
+from package.wtforms.validators import StopValidation
 
 
 __all__ = (

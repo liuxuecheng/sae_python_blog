@@ -2,7 +2,7 @@ from __future__ import unicode_literals
 
 from cgi import escape
 
-from wtforms.compat import text_type, string_types, iteritems
+from package.wtforms.compat import text_type, string_types, iteritems
 
 __all__ = (
     'CheckboxInput', 'FileInput', 'HiddenInput', 'ListWidget', 'PasswordInput',

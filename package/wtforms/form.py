@@ -5,7 +5,7 @@ __all__ = (
     'Form',
 )
 
-from wtforms.compat import with_metaclass, iteritems, itervalues
+from package.wtforms.compat import with_metaclass, iteritems, itervalues
 
 class BaseForm(object):
     """
