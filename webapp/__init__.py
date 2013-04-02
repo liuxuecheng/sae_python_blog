@@ -7,6 +7,7 @@ from webapp.user.views import user_page
 #app config
 app = Flask(__name__)
 app.config.from_pyfile('setting.ini')
+app.config.from_envvar('SETTING', silent=True)
 
 #register app
 app.register_blueprint(main_page)

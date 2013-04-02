@@ -1,5 +1,5 @@
 from flask import Blueprint
-from domain import engine, session
+from domain import engine, db_session
 from domain.model import Base
 
 db_page = Blueprint('db_page', __name__)
@@ -26,5 +26,5 @@ def init_data():
 	user = User("fainle")
 	user.password = "123456"
 
-	session.add(user)
-	session.commit()
+	db_session.add(user)
+	db_session.commit()
