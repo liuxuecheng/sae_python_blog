@@ -19,7 +19,7 @@ app.register_blueprint(user_page)
 
 #app before request
 @app.before_request
-def before_request(exception=None):
+def before_request():
 	pass
 
 

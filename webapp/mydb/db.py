@@ -23,7 +23,7 @@ def init_data():
 	"""	
 	from domain.model.user import User
 
-	user = User("fainle")
+	user = User("hehehas@gmail.com")
 	user.password = "123456"
 
 	db_session.add(user)
