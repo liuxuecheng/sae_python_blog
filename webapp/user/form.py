@@ -19,10 +19,10 @@ class LoginForm(Form):
 	email = TextField('email', validators=[
 			Required('Email not empty!'),
 			Email('Email format is wrong !'),
-			check_email()
+			check_email
 		])
 	password = TextField('password', validators=[
 			Required('password not empty !'),
 			Length(min=5, max=18),
-			check_password()
+			check_password
 		])
