@@ -1,6 +1,6 @@
 from package.wtforms import Form, TextField, validators
 
-def LoginForm(Form):
+class LoginForm(Form):
 	email = TextField('email', validators=[
 			Required('Email not empty!')
 		])
