@@ -6,7 +6,7 @@
   <h2 class="form-signin-heading">登录</h2>
   {{ loginform.csrf_token }}
   {{ loginform.email(placeholder='Email address',class='input-block-level') }}
-  {% if loginform.email.errors %}{{ loginform.email.errors[0] }}{% endif %}
+  {% if loginform.errors.email %}{{ loginform.errors.email[0] }}{% endif %}
   {{ loginform.password(placeholder='Password',class='input-block-level') }}
   <label class="checkbox">
     <input type="checkbox" value="remember-me" name="rememberme">记住我
