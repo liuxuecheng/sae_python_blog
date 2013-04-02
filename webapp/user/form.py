@@ -1,4 +1,4 @@
-from wtforms import Form, TextField, validators
+from package.wtforms import Form, TextField, validators
 
 def LoginForm(Form):
 	email = TextField('email', validators=[
