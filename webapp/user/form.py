@@ -1,10 +1,11 @@
 from package.wtforms import Form, TextField, validators
-from package.wtforms.validators import Required
+from package.wtforms.validators import Required, Length
 
 class LoginForm(Form):
 	email = TextField('email', validators=[
 			Required('Email not empty!')
 		])
 	password = TextField('password', validators=[
-			Required('password not empty')
+			Required('password not empty'),
+			Length(min=5, max=18)
 		])

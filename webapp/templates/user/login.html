@@ -6,7 +6,6 @@
   <h2 class="form-signin-heading">登录</h2>
   {{ loginform.csrf_token }}
   {{ loginform.email(placeholder='Email address',class='input-block-level') }}
-  {{ loginform.errors.email[0] }}
   {{ loginform.errors.password[0] }}
   {{ loginform.password(placeholder='Password',class='input-block-level') }}
   <label class="checkbox">
