@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template
+from flask import Blueprint, render_template, request
 from webapp.user.form import LoginForm
 
 
@@ -13,7 +13,10 @@ def register():
 @user_page.route("/user/login", methods=("POST","GET"))
 def login():
 	login_form = LoginForm()
-	login_form.validate()
+	if request.method = 'POST':
+		if login_form.validate():
+			pass
+	
 	return render_template("/user/login.html",
 			loginform=login_form
 		)
