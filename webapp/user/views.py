@@ -13,7 +13,7 @@ def register():
 @user_page.route("/user/login", methods=("POST","GET"))
 def login():
 	login_form = LoginForm()
-	if request.method = 'POST':
+	if request.method == 'POST':
 		if login_form.validate():
 			pass
 	
