@@ -16,11 +16,11 @@ app.register_blueprint(user_page)
 
 #app before request
 @app.before_request
-def before_request():
+def before_request(exception=None):
 	pass
 
 
 #app teardown request
 @app.teardown_request
-def teardown_request():
+def teardown_request(exception=None):
 	pass		
