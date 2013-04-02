@@ -13,7 +13,9 @@ def register():
 @user_page.route("/user/login", methods=("POST","GET"))
 def login():
 	login_form = LoginForm()
-	return render_template("/user/login.html")
+	return render_template("/user/login.html",
+			loginform=login_form
+		)
 
 
 @user_page.route("/user/logout", methods=('GET'))

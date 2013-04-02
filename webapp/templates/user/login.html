@@ -4,8 +4,9 @@
 {% block content %}
 <form class="form-signin" method="post" action="/user/login">
   <h2 class="form-signin-heading">登录</h2>
-  <input type="text" class="input-block-level" placeholder="Email address" name='email'>
-  <input type="password" class="input-block-level" placeholder="Password" name="password">
+  {{ form.csrf_token }}
+  {{ form.email(placeholder='Email address',class='input-block-level') }}
+  {{ form.password(placeholder='Password',class='input-block-level') }}
   <label class="checkbox">
     <input type="checkbox" value="remember-me" name="rememberme">记住我
   </label>
