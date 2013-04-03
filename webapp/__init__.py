@@ -26,5 +26,5 @@ def before_request():
 
 #app teardown request
 @app.teardown_request
-def teardown_request(exception=None):
+def shutdown_session(exception=None):
 	db_session.remove()		
