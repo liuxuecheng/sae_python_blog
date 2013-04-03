@@ -7,12 +7,12 @@ from flask import flash
 
 class LoginForm(Form):
 	email = TextField('email', validators=[
-			Required('Email not empty!'),
-			Email('Email format is wrong !'),
+			Required(u'邮件不能为空!'),
+			Email(u'邮件格式错误!'),
 		])
 	password = TextField('password', validators=[
-			Required('password not empty !'),
-			Length(min=5, max=18),
+			Required(u'密码不能为u空!'),
+			Length(min=5, max=18, u'密码长度不对'),
 		])
 
 
