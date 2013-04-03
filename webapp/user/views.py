@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, request
+from flask import Blueprint, render_template, request, g
 from webapp.user.form import LoginForm
 
 
