@@ -9,7 +9,7 @@
   {% if loginform.errors.email %}
   	<p class="text-error">{{ loginform.errors.email[0] }}</p>
   {% endif %}
-  {{ loginform.password(placeholder='Password',class='input-block-level') }}
+  {{ loginform.password(placeholder='Password',class='input-block-level',type='password') }}
   {% if loginform.errors.password %}
   	<p class="text-error">{{ loginform.errors.password[0] }}</p>
   {% endif %}
