@@ -3,6 +3,7 @@ from flask import Flask
 from webapp.main.views import main_page
 from webapp.mydb.db import db_page
 from webapp.user.views import user_page
+from domain import db_session
 
 
 #app config
@@ -26,4 +27,4 @@ def before_request():
 #app teardown request
 @app.teardown_request
 def teardown_request(exception=None):
-	pass		
+	db_session.remove()		
