@@ -37,11 +37,11 @@ class LoginForm(Form):
 			else:
 				self.user = None
 				is_user_valid = False
-				flash(u'邮箱或密码错误', 'error')
+				flash(u'邮箱或密码错误','error')
 
 		else:
 			self.user = None
 			is_user_valid = False
-			flash(u'邮箱或密码错误', 'error')
+			flash(u'邮箱或密码错误','error')
 
 		return is_user_valid
