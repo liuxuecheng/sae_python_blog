@@ -2,6 +2,6 @@
 {% block title %}登录{% endblock %}
 {% block css %}<link href="/static/css/user.css" rel="stylesheet">{% endblock %}
 {% block content %}
-{{ user.id }}
-{{ user.email }}
+{{ user.get(id) }}
+{{ user.get(email) }}
 {% endblock %}
