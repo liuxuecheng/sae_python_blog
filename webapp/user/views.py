@@ -37,5 +37,5 @@ def user():
 	else:
 		user = []	
 	return render_template('/user/index.html',
-			user = uesr
+			user = user
 		)	
