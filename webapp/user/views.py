@@ -16,7 +16,7 @@ def login():
 	login_form = LoginForm(request.form)
 	if request.method == 'POST':
 		if login_form.validate():
-			g.user = LoginForm.user
+			g.user = 1
 	
 	return render_template("/user/login.html",
 			loginform=login_form
