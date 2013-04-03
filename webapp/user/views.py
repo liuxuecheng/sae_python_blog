@@ -8,6 +8,7 @@ user_page = Blueprint("user_page", __name__)
 
 @user_page.route("/user/register", methods=('POST','GET'))
 def register():
+	
 	return render_template('/user/register.html')	
 
 
@@ -27,12 +28,14 @@ def login():
 
 @user_page.route("/user/logout")
 def logout():
+
 	session.pop('user_id', None)
 	return redirect('/user')
 
 
 @user_page.route("/user")
 def user():
+
 	if 'user_id' in session:
 		user = User.query.filter(User.id == session['user_id']).first()
 	else:
