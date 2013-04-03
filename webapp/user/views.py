@@ -25,7 +25,7 @@ def login():
 		)
 
 
-@user_page.route("/user/logout", methods=('GET'))
+@user_page.route("/user/logout")
 def logout():
 	session.pop('user_id', None)
 	return redirect('/user')
