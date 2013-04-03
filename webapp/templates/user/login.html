@@ -4,7 +4,7 @@
 {% block content %}
 <form class="form-signin" method="post" action="/user/login">
   <h2 class="form-signin-heading">登录</h2>
-  {% with messages = get_flashed_messages(category_filter=["error"]) %}
+  {% with messages = get_flashed_messages() %}
   {% if messages %}
   <p class="text-error">{{ messages[0] }}</p>
   {% endif %}
