@@ -12,7 +12,7 @@ class LoginForm(Form):
 		])
 	password = TextField('password', validators=[
 			Required(u'密码不能为u空!'),
-			Length(min=5, max=18, u'密码长度不对'),
+			Length(min=5, max=18, message=u'密码长度不对'),
 		])
 
 
