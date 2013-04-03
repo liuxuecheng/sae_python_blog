@@ -5,6 +5,7 @@ from domain.model.user import User
 
 class LoginForm(Form):
 
+
 	def check_email(form, field):
 		user_info = User.query.filter(User.email == field.data).first()
 		if  user_info is None:
@@ -16,6 +17,7 @@ class LoginForm(Form):
 		if  user_info.password != field.data: 
 			raise ValidationError('Password is wrong !')
 
+
 	email = TextField('email', validators=[
 			Required('Email not empty!'),
 			Email('Email format is wrong !'),
@@ -24,5 +26,5 @@ class LoginForm(Form):
 	password = TextField('password', validators=[
 			Required('password not empty !'),
 			Length(min=5, max=18),
-			#check_password
+			check_password
 		])
