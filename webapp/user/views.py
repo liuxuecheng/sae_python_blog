@@ -19,7 +19,8 @@ def login():
 			g.user = 1
 	
 	return render_template("/user/login.html",
-			loginform=login_form
+			loginform=login_form,
+			g=g
 		)
 
 
