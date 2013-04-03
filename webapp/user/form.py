@@ -16,8 +16,8 @@ class LoginForm(Form):
 
 
 	def __init__(self, *args, **kwargs):
-        Form.__init__(self, *args, **kwargs)
-        self.user = None
+		Form.__init__(self, *args, **kwargs)
+		self.user = None
 
 
     def validate(self):
