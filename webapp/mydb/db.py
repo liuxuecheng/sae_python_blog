@@ -24,6 +24,7 @@ def init_data():
 	from domain.model.user import User
 
 	user = User("hehehas@gmail.com")
+	user.nickname = 'fainle'
 	user.password = "123456"
 
 	db_session.add(user)

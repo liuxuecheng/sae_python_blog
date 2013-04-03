@@ -10,7 +10,7 @@ class User(Base):
 	password = Column(String(16))
 
 	def __init__(self, email):
-		self.name = email
+		self.email = email
 
 	def __repr__(self):
 		return "<User('%s','%s')>" %(self.id, self.email)	
