@@ -20,28 +20,28 @@ class LoginForm(Form):
 		self.user = None
 
 
-    def validate(self):
-        """
-        Validate user email and password is correct.
-        """
+	def validate(self):
+		"""
+		Validate user email and password is correct.
+		"""
 
-        if not Form.validate(self):
-            return False
+		if not Form.validate(self):
+			return False
+		
+		user = User.query.filter(User.email == self.email.data).first()
 
-        user = User.query.filter(User.email == self.email.data).first()
+		if user is not None:
+			if user.password == self.password.data:
+				self.user = user
+				is_user_valid = True
+			else:
+				self.user = None
+				is_user_valid = False
+				flash(u'邮箱或密码错误', 'error')
 
-        if user is not None:
-            if user.password == self.password.data:
-                self.user = user
-                is_user_valid = True
-            else:
-                self.user = None
-                is_user_valid = False
-                flash(u'邮箱或密码错误', 'error')
+		else:
+			self.user = None
+			is_user_valid = False
+			flash(u'邮箱或密码错误', 'error')
 
-        else:
-            self.user = None
-            is_user_valid = False
-            flash(u'邮箱或密码错误', 'error')
-
-        return is_user_valid
+		return is_user_valid
