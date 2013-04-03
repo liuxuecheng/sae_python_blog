@@ -27,7 +27,8 @@ def login():
 
 @user_page.route("/user/logout", methods=('GET'))
 def logout():
-	pass
+	session.pop('user_id', None)
+	return redirect('/user')
 
 
 @user_page.route("/user")
