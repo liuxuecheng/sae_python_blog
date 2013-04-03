@@ -24,5 +24,5 @@ class LoginForm(Form):
 	password = TextField('password', validators=[
 			Required('password not empty !'),
 			Length(min=5, max=18),
-			check_password
+			#check_password
 		])
