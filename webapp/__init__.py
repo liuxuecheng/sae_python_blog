@@ -1,9 +1,10 @@
 # -*- coding: utf-8 -*-
-from flask import Flask
+from flask import Flask, g
 from webapp.main.views import main_page
 from webapp.mydb.db import db_page
 from webapp.user.views import user_page
 from domain import db_session
+from domain.model.user import User
 
 
 #app config
@@ -21,7 +22,9 @@ app.register_blueprint(user_page)
 #app before request
 @app.before_request
 def before_request():
-	pass
+	if 'user_id' in session:
+		g.user = User.query.filter(User.id == session['user_id']).first()
+
 
 
 #app teardown request
