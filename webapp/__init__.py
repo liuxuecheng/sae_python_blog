@@ -1,8 +1,9 @@
 # -*- coding: utf-8 -*-
 from flask import Flask, g, session
-from webapp.main.views import main_page
 from webapp.mydb.db import db_page
+from webapp.main.views import main_page
 from webapp.user.views import user_page
+from webapp.admin.views import admin_page
 from domain import db_session
 from domain.model.user import User
 
@@ -17,6 +18,7 @@ app.config.from_envvar('SETTING', silent=True)
 app.register_blueprint(main_page)
 app.register_blueprint(db_page)
 app.register_blueprint(user_page)
+app.register_blueprint(admin_page)
 
 
 #app before request
