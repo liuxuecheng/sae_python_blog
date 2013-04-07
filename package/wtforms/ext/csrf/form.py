@@ -1,7 +1,7 @@
 from __future__ import unicode_literals
 
-from wtforms.form import Form
-from wtforms.validators import ValidationError
+from package.wtforms.form import Form
+from package.wtforms.validators import ValidationError
 
 from .fields import CSRFTokenField
 

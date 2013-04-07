@@ -1,1 +1,1 @@
-from wtforms.ext.csrf.form import SecureForm
+from package.wtforms.ext.csrf.form import SecureForm

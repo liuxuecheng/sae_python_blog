@@ -1,4 +1,4 @@
-from wtforms.fields import HiddenField
+from package.wtforms.fields import HiddenField
 
 
 class CSRFTokenField(HiddenField):
