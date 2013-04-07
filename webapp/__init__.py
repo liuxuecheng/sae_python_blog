@@ -30,7 +30,6 @@ def before_request():
 		g.user = None	
 
 
-
 #app teardown request
 @app.teardown_request
 def shutdown_session(exception=None):
