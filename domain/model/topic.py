@@ -1,5 +1,17 @@
 from domain.model import Base
-from sqlalchemy import Column, Integer, String
+from sqlalchemy import Column, Integer, String, Text
+
+
+class Category(Base):
+	"""
+	Category model
+	"""
+	__tablename__ = 'topic_category'
+	id = Column(Integer, primary_key=True)
+	parent_id = Column(Integer, default=0)
+	name = Column(String(20), default='')
+	priority = Column(Integer, default=0)
+
 
 class Topic(Base):
 	"""
@@ -10,7 +22,7 @@ class Topic(Base):
 
 	id = Column(Integer, primary_key=True)
 	title = Column(String(20))
-	content = Column(String(16))
+	content = Column(Text)
 
 	def __init__(self, name):
 		self.title = title
@@ -25,6 +37,8 @@ class TopicTag(Base):
 	"""
 
 	__tablename__ = 'topic_tag'
+	id = Column(Integer, primary_key=True)
+	name = Column(String(20), default='')
 
 	def __init__:
-		pass
+		pass		
