@@ -1,5 +1,6 @@
-from flask import Blueprint, render_template
+from flask import Blueprint, render_template, jsonify
 from domain.model.user import User
+from domain.model.topic import Category, Topic, TopicTag
 from domain import db_session
 from webapp.user import login_required, is_admin 
 
@@ -16,5 +17,30 @@ def index():
 
 
 @admin_page.route('/admin/topic/category')
+@login_required
+@is_admin
 def category():
 	return render_template('/admin/category.html')
+
+
+@admin_page.route('/admin/topic/addcategory')
+@login_required
+@is_admin
+def add_category():
+	a = 1
+	b = 2
+	return jsonify(data = a + b)
+
+
+@admin_page.route('/admin/topic/editcategory')
+@login_required
+@is_admin
+def edit_category():
+	pass
+
+
+@admin_page.route('/admin/topic/delcategory')
+@login_required
+@is_admin
+def del_category():
+	pass	
