@@ -27,9 +27,10 @@ def category():
 @login_required
 @is_admin
 def add_category():
-	a = 1
-	b = 2
-	return jsonify(data = a + b)
+	data={}
+	data[a] = 1
+	data[b] = 1
+	return jsonify(data)
 
 
 @admin_page.route('/admin/topic/editcategory')
