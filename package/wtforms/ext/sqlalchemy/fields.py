@@ -5,10 +5,10 @@ from __future__ import unicode_literals
 
 import operator
 
-from wtforms import widgets
-from wtforms.compat import text_type, string_types
-from wtforms.fields import SelectFieldBase
-from wtforms.validators import ValidationError
+from package.wtforms import widgets
+from package.wtforms.compat import text_type, string_types
+from package.wtforms.fields import SelectFieldBase
+from package.wtforms.validators import ValidationError
 
 try:
     from sqlalchemy.orm.util import identity_key

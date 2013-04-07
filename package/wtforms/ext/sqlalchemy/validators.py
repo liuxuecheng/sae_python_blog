@@ -1,6 +1,6 @@
 from __future__ import unicode_literals
 
-from wtforms import ValidationError
+from package.wtforms import ValidationError
 from sqlalchemy.orm.exc import NoResultFound
 
 

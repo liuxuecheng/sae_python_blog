@@ -4,8 +4,8 @@ import decimal
 import operator
 import warnings
 
-from wtforms import fields, widgets
-from wtforms.compat import text_type, string_types
+from package.wtforms import fields, widgets
+from package.wtforms.compat import text_type, string_types
 
 class ReferencePropertyField(fields.SelectFieldBase):
     """

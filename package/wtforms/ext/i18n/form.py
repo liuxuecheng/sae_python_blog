@@ -1,5 +1,5 @@
-from wtforms import form
-from wtforms.ext.i18n.utils import get_translations
+from package.wtforms import form
+from package.wtforms.ext.i18n.utils import get_translations
 
 translations_cache = {}
 

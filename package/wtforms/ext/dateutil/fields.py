@@ -5,9 +5,9 @@ from __future__ import unicode_literals
 
 from dateutil import parser
 
-from wtforms.fields import Field
-from wtforms.validators import ValidationError
-from wtforms.widgets import TextInput
+from package.wtforms.fields import Field
+from package.wtforms.validators import ValidationError
+from package.wtforms.widgets import TextInput
 
 
 __all__ = (

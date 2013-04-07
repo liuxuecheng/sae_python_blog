@@ -91,9 +91,9 @@ class:
    ContactForm = model_form(Contact, base_class=BaseContactForm)
 
 """
-from wtforms import Form, validators, widgets, fields as f
-from wtforms.compat import iteritems
-from wtforms.ext.appengine.fields import GeoPtPropertyField, ReferencePropertyField, StringListPropertyField
+from package.wtforms import Form, validators, widgets, fields as f
+from package.wtforms.compat import iteritems
+from package.wtforms.ext.appengine.fields import GeoPtPropertyField, ReferencePropertyField, StringListPropertyField
 
 
 def get_TextField(kwargs):

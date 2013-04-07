@@ -5,12 +5,12 @@ from __future__ import unicode_literals
 
 import inspect
 
-from wtforms import fields as f
-from wtforms import validators
-from wtforms.form import Form
-from wtforms.ext.sqlalchemy.fields import QuerySelectField
-from wtforms.ext.sqlalchemy.fields import QuerySelectMultipleField
-from wtforms.ext.sqlalchemy.validators import Unique
+from package.wtforms import fields as f
+from package.wtforms import validators
+from package.wtforms.form import Form
+from package.wtforms.ext.sqlalchemy.fields import QuerySelectField
+from package.wtforms.ext.sqlalchemy.fields import QuerySelectMultipleField
+from package.wtforms.ext.sqlalchemy.validators import Unique
 
 __all__ = (
     'model_fields', 'model_form',
