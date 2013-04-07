@@ -15,7 +15,7 @@ def login_required(func):
 def is_admin(func):
 	@wraps(func)
 	def _(*args, **kwargs):
-		if g.user is None or g.user.id != 2:
+		if g.user is None or g.user.id != 1:
 			return abort(404)
 		return func(*args, **kwargs)
 	
