@@ -1,0 +1,14 @@
+{% extends '/layout/base.html' %}
+{% block title %}管理{% endblock %}
+{% block css %}<link href="/static/css/user.css" rel="stylesheet">{% endblock %}
+{% block content %}
+<div class="row">
+  <div class="span8">
+    <div class="conl basediv">
+      <h3>欢迎来到后台管理页面</h3>
+      <p>这里可以做一些基本的设置</p>
+    </div>  
+  </div>
+  {% include '/admin/_right.html' %}
+</div>
+{% endblock %}

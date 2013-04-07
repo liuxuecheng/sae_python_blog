@@ -27,9 +27,7 @@ def category():
 @login_required
 @is_admin
 def add_category():
-	data={}
-	data['a'] = 1
-	data['b'] = 1
+	data = {}
 	return jsonify(data)
 
 
