@@ -28,8 +28,8 @@ def category():
 @is_admin
 def add_category():
 	data={}
-	data[a] = 1
-	data[b] = 1
+	data['a'] = 1
+	data['b'] = 1
 	return jsonify(data)
 
 
