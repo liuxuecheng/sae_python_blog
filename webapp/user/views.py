@@ -1,6 +1,7 @@
 from flask import Blueprint, render_template, request, g, session, redirect
 from webapp.user.form import LoginForm
 from domain.model.user import User
+import os
 
 
 user_page = Blueprint("user_page", __name__)
