@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from flask import Blueprint
 from domain import engine, db_session
 from domain.model import Base
