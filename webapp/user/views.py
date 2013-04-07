@@ -35,11 +35,4 @@ def logout():
 
 @user_page.route("/user")
 def user():
-
-	if 'user_id' in session:
-		user = User.query.filter(User.id == session['user_id']).first()
-	else:
-		user = []	
-	return render_template('/user/index.html',
-			user = user
-		)	
+	return render_template('/user/index.html')	
