@@ -11,7 +11,7 @@ class LoginForm(Form):
 			Email(u'邮件格式错误!'),
 		])
 	password = TextField('password', validators=[
-			Required(u'密码不能为u空!'),
+			Required(u'密码不能为空!'),
 			Length(min=5, max=18, message=u'密码长度不对'),
 		])
 
