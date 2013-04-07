@@ -4,7 +4,7 @@ from flask import g, request, redirect, abort
 def login_required(func):
 	@wraps(func)
 	def _(*args, **kwargs):
-		if g.user is None:
+		if g.user.id == '':
 			return abort(404)
 			#return redirect('/user/login')
 		return func(*args, **kwargs)
