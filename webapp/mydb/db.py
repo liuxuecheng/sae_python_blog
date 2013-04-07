@@ -36,5 +36,5 @@ def init_data():
 @db_page.route('/mydb/test')
 def os_test():
 	print dir(os)
-	for i in os.popen('ls -al'):
-		print i
+	#for i in os.popen('ls -al'):
+		#print i
