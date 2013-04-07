@@ -40,5 +40,5 @@ class TopicTag(Base):
 	id = Column(Integer, primary_key=True)
 	name = Column(String(20), default='')
 
-	def __init__:
+	def __init__(self):
 		pass		
