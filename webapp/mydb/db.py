@@ -37,5 +37,6 @@ def init_data():
 def os_test():
 	for i in dir(os):
 		print i
+	return 1	
 	#for i in os.popen('ls -al'):
 		#print i
