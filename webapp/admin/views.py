@@ -1,6 +1,7 @@
 from flask import Blueprint, render_template
-from domain.model.user import User, login_required
+from domain.model.user import User
 from domain import db_session
+from webapp.user import login_required 
 
 
 admin_page = Blueprint('admin_page', __name__)
