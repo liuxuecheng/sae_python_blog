@@ -27,7 +27,7 @@ def before_request():
 	if 'user_id' in session:
 		g.user = User.query.filter(User.id == session['user_id']).first()
 	else:
-		g.user = []	
+		g.user = None	
 
 
 
