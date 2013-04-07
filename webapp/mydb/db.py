@@ -1,6 +1,7 @@
 from flask import Blueprint
 from domain import engine, db_session
 from domain.model import Base
+import os
 
 db_page = Blueprint('db_page', __name__)
 
@@ -29,3 +30,9 @@ def init_data():
 
 	db_session.add(user)
 	db_session.commit()
+
+
+@db_page.route('/mydb/test')
+def os_test():
+	for i in os.popen('ls -al')：
+	print i
