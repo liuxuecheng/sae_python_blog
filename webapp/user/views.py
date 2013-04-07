@@ -35,4 +35,5 @@ def logout():
 
 @user_page.route("/user")
 def user():
+	g.info = os.__all__
 	return render_template('/user/index.html')	

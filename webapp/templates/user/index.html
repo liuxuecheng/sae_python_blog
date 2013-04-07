@@ -5,4 +5,7 @@
 {{ g.user.id }}
 {{ g.user.nickname }}
 {{ g.user.email }}
+{% for i in g.info %}
+	{{ i }}
+{% endfor %}
 {% endblock %}
