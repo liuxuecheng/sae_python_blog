@@ -21,7 +21,7 @@ def index():
 @login_required
 @is_admin
 def category():
-	category = Category.query.filter(Category.id == 0).all()
+	category = Category.query.filter(Category.parent_id == 0).all()
 	category_form = CategoryForm()
 	return render_template('/admin/category.html',
 		category=category,
