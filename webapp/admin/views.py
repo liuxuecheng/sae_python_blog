@@ -32,16 +32,16 @@ def category():
 @is_admin
 def add_category():
 	data = {}
-	id = request.form.get(id)
+	id = request.form['id']
 	category = Category.query.filter_by(id == id).first()
 	category_form = CategoryForm(obj = category)
 	if request.method == 'POST' and category_form.validate():
 		if category:
 			category_form.populate_obj(category)
 		else:
-			category = Category(request.form.name.data)
-			category.parent_id = request.form.parent_id.data
-			category.priority = request.form.priority.data
+			category = Category(category_form.name.data)
+			category.parent_id = category_form.parent_id.data
+			category.priority = category_form.priority.data
 			db_session.add(category)
 		db_session.commit()
 		data['code'] = 200			
