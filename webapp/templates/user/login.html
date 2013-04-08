@@ -2,7 +2,7 @@
 {% block title %}登录{% endblock %}
 {% block css %}<link href="/static/css/user.css" rel="stylesheet">{% endblock %}
 {% block content %}
-<form class="form-signin" method="post" action="/user/login">
+<form class="form-signin" method="post" action="">
   <h2 class="form-signin-heading">登录</h2>
   {% with messages = get_flashed_messages() %}
   {% if messages %}
