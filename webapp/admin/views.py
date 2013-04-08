@@ -34,7 +34,7 @@ def category():
 def add_category():
 	data = {}
 	id = request.form['id']
-	category = Category.query.filter_by(id == id).first()
+	category = Category.query.filter(Category.id == id).first()
 	category_form = CategoryForm(obj = category)
 	if request.method == 'POST' and category_form.validate():
 		if category:
