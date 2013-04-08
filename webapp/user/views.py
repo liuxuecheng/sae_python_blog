@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, request, g, session, redirect
+from flask import Blueprint, render_template, request, g, session, redirect, url_for
 from webapp.user.form import LoginForm
 from domain.model.user import User
 import subprocess
@@ -20,7 +20,7 @@ def login():
 		if login_form.validate():
 			session['user_id'] = login_form.user.id
 
-			return redirect(request.args.get('next') or '/user')
+			return redirect(url_for(request.args.get('next')))
 
 	return render_template("/user/login.html",
 			loginform=login_form
