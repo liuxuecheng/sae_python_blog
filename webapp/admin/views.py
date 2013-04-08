@@ -37,16 +37,16 @@ def add_category():
 	category = Category.query.filter(Category.id == id).first()
 	category_form = CategoryForm(obj = category)
 	category_form.validate()
-	data['error'] = category_form.validate()
 	if request.method == 'POST' and category_form.validate():
 		if category:
 			category_form.populate_obj(category)
+			db_session.commit()
 		else:
 			category = Category(category_form.name.data)
 			category.parent_id = category_form.parent_id.data
 			category.priority = category_form.priority.data
 			db_session.add(category)
-		db_session.commit()
+			db_session.commit()
 		data['code'] = 200			
 	data['code'] = 401	
 	return jsonify(data)
