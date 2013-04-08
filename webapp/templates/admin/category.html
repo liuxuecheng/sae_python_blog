@@ -21,9 +21,27 @@
 		<form>
 			{{ category_form.csrf_token }}
 			{{ category_form.id }}
-			{{ category_form.parent_id }}
-			{{ category_form.name }}
-			{{ category_form.priority }}
+			<div class="control-group">
+				<label class="control-label" for="inputWarning">名称</label>
+				<div class="controls">
+				{{ category_form.name }}
+				<span class="help-inline error" id="inputWarning">Something may have gone wrong</span>
+				</div>
+			</div>
+			<div class="control-group">
+				<label class="control-label" for="inputWarning">父级id</label>
+				<div class="controls">
+				{{ category_form.parent_id }}
+				<span class="help-inline error" id="inputWarning">Something may have gone wrong</span>
+				</div>
+			</div>
+			<div class="control-group">
+				<label class="control-label" for="inputWarning">权重</label>
+				<div class="controls">
+				{{ category_form.priority }}
+				<span class="help-inline error" id="inputWarning">Something may have gone wrong</span>
+				</div>
+			</div>
 		</form>
 	</div>
 	<div class="modal-footer">
