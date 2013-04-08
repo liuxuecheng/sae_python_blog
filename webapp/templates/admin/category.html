@@ -11,7 +11,7 @@
       	{% for c in category %}
       		{% if c.parent_id == 0 %}
       		<li>{{ c.name }}</li>
-      		{% elif c.id = c.parent_id %}
+      		{% elif c.id == c.parent_id %}
       		<p>{{ c.name }}</p>
       		{% endif %} %}
       	{% endfor %}
