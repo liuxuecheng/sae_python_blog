@@ -47,8 +47,10 @@ def add_category():
 			category.priority = category_form.priority.data
 			db_session.add(category)
 			db_session.commit()
-		data['code'] = 200			
-	data['code'] = 401	
+		data['code'] = 200
+	else:				
+		data['code'] = 401	
+	
 	return jsonify(data)
 
 
