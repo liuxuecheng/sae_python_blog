@@ -33,9 +33,6 @@ def category():
 @is_admin
 def add_category():
 	data = {}
-	data['code'] = 401	
-	return jsonify(data)
-	
 	id = request.form['id']
 	category = Category.query.filter_by(id == id).first()
 	category_form = CategoryForm(obj = category)
@@ -49,7 +46,8 @@ def add_category():
 			db_session.add(category)
 		db_session.commit()
 		data['code'] = 200			
-	
+	data['code'] = 401	
+	return jsonify(data)
 
 
 @admin_page.route('/admin/topic/editcategory')
