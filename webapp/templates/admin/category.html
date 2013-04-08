@@ -9,7 +9,11 @@
       <p><a href="#categoryModal" data-toggle="modal">添加分类</a></p>
       <ul>
       	{% for c in category %}
+      		{% if c.parent_id == 0 %}
       		<li>{{ c.name }}</li>
+      		{% elif c.id = c.parent_id %}
+      		<p>{{ c.name }}</p>
+      		{% endif %} %}
       	{% endfor %}
       </ul>
     </div>  
