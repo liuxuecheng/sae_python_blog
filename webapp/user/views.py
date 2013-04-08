@@ -17,7 +17,7 @@ def register():
 def login():
 	next = request.args["next"]
 	print next
-	return '1'
+	return next
 	login_form = LoginForm(request.form)
 	if request.method == 'POST':
 		if login_form.validate():
