@@ -21,11 +21,12 @@ def index():
 @login_required
 @is_admin
 def category():
+	caregory = Category.query.filter(Category.id == 0).all()
 	category_form = CategoryForm()
 	return render_template('/admin/category.html',
+		category=category,
 		category_form = category_form	
 		)
-
 
 
 @admin_page.route("/admin/topic/addcategory", methods=("POST",)) 

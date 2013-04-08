@@ -7,6 +7,11 @@
     <div class="conl basediv">
       <h3>分类设置</h3>
       <p><a href="#categoryModal" data-toggle="modal">添加分类</a></p>
+      <ul>
+      	{% for c in category %}
+      		<li>{{ c.name }}</li>
+      	{% endfor %}
+      </ul>
     </div>  
   </div>
   {% include '/admin/_right.html' %}
