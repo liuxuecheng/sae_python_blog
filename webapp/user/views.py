@@ -15,11 +15,11 @@ def register():
 
 @user_page.route("/user/login", methods=("POST","GET"))
 def login():
+	next = request.args["next"]
 	login_form = LoginForm(request.form)
 	if request.method == 'POST':
 		if login_form.validate():
 			session['user_id'] = login_form.user.id
-			next = request.args["next"]
 			return redirect(next)
 
 	return render_template("/user/login.html",
