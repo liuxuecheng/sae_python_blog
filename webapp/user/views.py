@@ -15,7 +15,7 @@ def register():
 
 @user_page.route("/user/login", methods=("POST","GET"))
 def login():
-	next = request.args["next"]
+	next = '/user/sfdwfsf'
 	print next
 	return redirect(next)
 	login_form = LoginForm(request.form)
