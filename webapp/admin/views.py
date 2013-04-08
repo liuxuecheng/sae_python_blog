@@ -37,7 +37,7 @@ def add_category():
 	category = Category.query.filter(Category.id == id).first()
 	category_form = CategoryForm(obj = category)
 	category_form.validate()
-	data['error'] = category_form.errors
+	data['error'] = category_form.validate()
 	if request.method == 'POST' and category_form.validate():
 		if category:
 			category_form.populate_obj(category)
