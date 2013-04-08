@@ -6,7 +6,7 @@ def login_required(func):
 	@wraps(func)
 	def _(*args, **kwargs):
 		if g.user is None:
-			return redirect(request.args.get('next') or '/user')
+			return redirect('/user/login')
 		return func(*args, **kwargs)
 
 	return _
