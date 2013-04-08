@@ -19,8 +19,8 @@ def login():
 	if request.method == 'POST':
 		if login_form.validate():
 			session['user_id'] = login_form.user.id
-
-			return redirect(url_for(request.args.get('next')))
+			next = request.args.get('next')
+			return redirect(next)
 
 	return render_template("/user/login.html",
 			loginform=login_form
