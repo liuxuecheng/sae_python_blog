@@ -7,9 +7,9 @@
     <div class="conl basediv">
       <h3>分类设置</h3>
       <p><a href="#categoryModal" data-toggle="modal">添加分类</a></p>
-      <ul>
+        <ul class="nav nav-pills nav-stacked">
       	{% for c in category %}
-      		<li>{{ c.name }}</li>
+      		<li><i class="icon-plus"></i>{{ c.name }}</li>
       	{% endfor %}
       </ul>
     </div>  
