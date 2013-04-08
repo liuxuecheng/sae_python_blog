@@ -12,6 +12,12 @@ class Category(Base):
 	name = Column(String(20), default='')
 	priority = Column(Integer, default=0)
 
+	def __init__(self, name):
+		self.name = name
+
+	def __repr__(self):
+		return "<topoc_category('%s')>" %(self.name, self.name)	
+
 
 class Topic(Base):
 	"""

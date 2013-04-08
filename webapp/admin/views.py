@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, jsonify
+from flask import Blueprint, render_template, jsonify, request
 from domain.model.user import User
 from domain.model.topic import Category, Topic, TopicTag
 from domain import db_session
@@ -32,6 +32,20 @@ def category():
 @is_admin
 def add_category():
 	data = {}
+	id = request.form.get(id)
+	category = Category.query.filter_by(id == id).first()
+	category_form = CategoryForm(obj = category)
+	if request.method == 'POST' and category_form.validate():
+		if category:
+			category_form.populate_obj(category)
+		else:
+			category = Category(request.form.name.data)
+			category.parent_id = request.form.parent_id.data
+			category.priority = request.form.priority.data
+			db_session.add(category)
+		db_session.commit()
+		data['code'] = 200			
+	data['code'] = 401	
 	return jsonify(data)
 
 
