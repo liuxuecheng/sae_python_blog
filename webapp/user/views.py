@@ -17,12 +17,10 @@ def register():
 def login():
 	next = request.args.get('next')
 	login_form = LoginForm(request.form)
-	session['user_id'] = 1
-	return redirect(next)
 	if request.method == 'POST':
 		if login_form.validate():
 			session['user_id'] = login_form.user.id
-			return next
+			return redirect(next or '/user')
 
 	return render_template("/user/login.html",
 			loginform=login_form
