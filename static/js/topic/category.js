@@ -1,6 +1,6 @@
 var doSave = $("#doSave");
 
 
-doSave.click(function{
+doSave.click(function(){
 	alert(1);
 })
