@@ -55,7 +55,7 @@ __all__ += [str(v) for v in (widgets.__all__ if hasattr(widgets, '__all__') else
 __all__ += recaptcha.__all__
 
 if _is_sqlalchemy:
-    from wtforms.ext.sqlalchemy.fields import QuerySelectField, \
+    from package.wtforms.ext.sqlalchemy.fields import QuerySelectField, \
         QuerySelectMultipleField
 
     __all__ += ['QuerySelectField',
