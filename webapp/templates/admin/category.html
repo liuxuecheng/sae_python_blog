@@ -9,7 +9,15 @@
       <p><a href="#categoryModal" data-toggle="modal">添加分类</a></p>
         <ul class="nav nav-pills nav-stacked">
       	{% for c in category %}
-      		<li><a href=""><i class="icon-plus"></i>{{ c.name }}</a> <a href="">添加子栏目</a> <a href="">编辑</a> <a href="">删除</a></li>
+      		<li>
+  			    <ul class="nav nav-pills">
+  			    	<li><a href="###"><i class="icon-plus"></i></a></li>
+					<li>{{ c.name }}</li>
+					<li><a href="#">添加子栏目</a></li>
+					<li><a href="#">编辑</a></li>
+					<li><a href="#">删除</a></li>
+				</ul>
+      		</li>
       	{% endfor %}
       </ul>
     </div>  
