@@ -16,6 +16,8 @@ def register():
 @user_page.route("/user/login", methods=("POST","GET"))
 def login():
 	next = request.args["next"]
+	print next
+	return '1'
 	login_form = LoginForm(request.form)
 	if request.method == 'POST':
 		if login_form.validate():
