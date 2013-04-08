@@ -27,7 +27,7 @@ def category():
 		)
 
 
-@admin_page.route('/admin/topic/addcategory', methods=('POST'))
+@admin_page.route('/admin/topic/addcategory', methods=('POST',)) 
 @login_required
 @is_admin
 def add_category():
