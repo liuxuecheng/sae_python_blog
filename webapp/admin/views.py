@@ -66,4 +66,11 @@ def edit_category():
 @login_required
 @is_admin
 def del_category():
-	pass	
+	pass
+
+
+@admin_page.route('/admin/topic/add', methods=("POST","GET"))
+@login_required
+@is_admin
+def add():
+	pass		
