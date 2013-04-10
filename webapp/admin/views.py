@@ -73,4 +73,4 @@ def del_category():
 @login_required
 @is_admin
 def add():
-	pass		
+	return render_template('/admin/addtopic.html')		
