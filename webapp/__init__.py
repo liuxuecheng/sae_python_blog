@@ -22,7 +22,7 @@ app.register_blueprint(user_page)
 app.register_blueprint(admin_page)
 
 
-#app before request
+#app before request Category
 @app.before_request
 def before_request():
 	if 'user_id' in session:
@@ -30,7 +30,7 @@ def before_request():
 	else:
 		g.user = None
 
-	g.category = Category.query.filter(Category.parent_id == 0).first()		
+	g.category = Category.query.filter(Category.parent_id == 0).all()		
 
 
 #app teardown request
