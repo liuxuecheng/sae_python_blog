@@ -6,6 +6,7 @@ from webapp.user.views import user_page
 from webapp.admin.views import admin_page
 from domain import db_session
 from domain.model.user import User
+from domain.model.topic import Category
 
 
 #app config
@@ -27,7 +28,9 @@ def before_request():
 	if 'user_id' in session:
 		g.user = User.query.filter(User.id == session['user_id']).first()
 	else:
-		g.user = None	
+		g.user = None
+
+	g.category = Category.query.filter(Category.parent_id == 0).first()		
 
 
 #app teardown request
