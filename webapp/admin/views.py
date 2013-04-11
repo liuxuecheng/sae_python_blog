@@ -67,13 +67,12 @@ def edit_category():
 def del_category():
 	pass
 
-
+@admin_page.route('/admin/topic/add', methods=("POST","GET"))
 @admin_page.route('/admin/topic/add/<int:id>', methods=("POST","GET"))
 @login_required
 @is_admin
 def add(id = 0):
 	topic = Topic.query.filter(Topic.id == id).first()
-	return topic
 	topic_form = TopicForm(obj = topic)
 	return render_template('/admin/addtopic.html',
 		topic_form = topic_form,
