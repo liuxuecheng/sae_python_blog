@@ -10,7 +10,7 @@
 			{{ topic_form.csrf_token }}
 			<div class="control">
 				<div class="controls">
-				{{ topic_form.title }}
+				{{ topic_form.title(placeholder="标题")}}
 				<span class="help-inline error" id="inputWarning"></span>
 				</div>
 			</div>
@@ -22,7 +22,7 @@
 			</div>
 			<div class="control">
 				<div class="controls">
-				{{ topic_form.priority }}
+				{{ topic_form.priority(placeholder="权重") }}
 				<span class="help-inline error" id="inputWarning"></span>
 				</div>
 			</div>
