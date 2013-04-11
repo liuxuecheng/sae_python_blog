@@ -5,11 +5,11 @@
 <div class="row">
   <div class="span8">
     <div class="conl basediv">
-      <h3>分类设置</h3>
-      <form class="form" id="categoryForm">
+      <h3>添加文章</h3>
+      <form class="form-horizontal" id="categoryForm">
 			{{ topic_form.csrf_token }}
 			<div class="control-group">
-				<label class="control-label" for="inputWarning">名称</label>
+				<label class="control-label" for="inputWarning">标题</label>
 				<div class="controls">
 				{{ topic_form.title }}
 				<span class="help-inline error" id="inputWarning"></span>
