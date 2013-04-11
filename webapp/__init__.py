@@ -30,7 +30,7 @@ def before_request():
 	else:
 		g.user = None
 
-	g.category = Category.query.filter(Category.parent_id == 0).all()		
+	#g.category = Category.query.filter(Category.parent_id == 0).all()		
 
 
 #app teardown request
