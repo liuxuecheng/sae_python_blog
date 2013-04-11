@@ -13,4 +13,5 @@ class CategoryForm(Form):
 
 class TopicForm(Form):
 	title = TextField('title', default='')
-	content = TextAreaField('content', default='') 	
+	content = TextAreaField('content', default='')
+	priority = IntegerField('priority', default=0) 	
