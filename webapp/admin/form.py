@@ -12,6 +12,5 @@ class CategoryForm(Form):
 
 
 class TopicForm(Form):
-	id = HiddenField('id', default=0)
 	title = TextField('title', default='')
 	content = TextAreaField('content', default='') 	
