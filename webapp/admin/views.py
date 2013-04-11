@@ -3,7 +3,7 @@ from domain.model.user import User
 from domain.model.topic import Category, Topic, TopicTag
 from domain import db_session
 from webapp.user import login_required, is_admin
-from webapp.admin.form import CategoryForm 
+from webapp.admin.form import CategoryForm, TopicForm 
 
 
 admin_page = Blueprint('admin_page', __name__)
@@ -37,7 +37,6 @@ def add_category():
 	id = request.form['id']
 	category = Category.query.filter(Category.id == id).first()
 	category_form = CategoryForm(obj = category)
-	category_form.validate()
 	if request.method == 'POST' and category_form.validate():
 		if category:
 			category_form.populate_obj(category)
@@ -73,4 +72,9 @@ def del_category():
 @login_required
 @is_admin
 def add():
-	return render_template('/admin/addtopic.html')		
+	id = request.form['id']
+	topic = Topic.query.filter(Topic.id == id).first()
+	topic_form = TopicForm(obj = topic)
+	return render_template('/admin/addtopic.html',
+		topic_form = topic_form,
+		)		
