@@ -6,24 +6,21 @@
   <div class="span8">
     <div class="conl basediv">
       <h3>添加文章</h3>
-      <form class="form-horizontal" id="categoryForm">
+      <form class="form" id="categoryForm">
 			{{ topic_form.csrf_token }}
-			<div class="control-group">
-				<label class="control-label" for="inputWarning">标题</label>
+			<div class="control">
 				<div class="controls">
 				{{ topic_form.title }}
 				<span class="help-inline error" id="inputWarning"></span>
 				</div>
 			</div>
-			<div class="control-group">
-				<label class="control-label" for="inputWarning">父级id</label>
+			<div class="control">
 				<div class="controls">
 				{{ topic_form.content }}
 				<span class="help-inline error" id="inputWarning"></span>
 				</div>
 			</div>
-			<div class="control-group">
-				<label class="control-label" for="inputWarning">权重</label>
+			<div class="control">
 				<div class="controls">
 				{{ topic_form.priority }}
 				<span class="help-inline error" id="inputWarning"></span>
