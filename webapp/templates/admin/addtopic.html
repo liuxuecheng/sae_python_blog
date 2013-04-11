@@ -6,63 +6,34 @@
   <div class="span8">
     <div class="conl basediv">
       <h3>分类设置</h3>
-      <p><a href="#categoryModal" data-toggle="modal">添加分类</a></p>
-        <ul class="nav nav-pills nav-stacked">
-      	{% for c in category %}
-      		<li>
-  			    <ul class="nav nav-pills">
-  			    	<li><a href="###"><i class="icon-plus"></i></a></li>
-					<li class="disabled"><a href="###">{{ c.name }}</a></li>
-					<li><a href="#">添加子栏目</a></li>
-					<li><a href="#">编辑</a></li>
-					<li><a href="#">删除</a></li>
-				</ul>
-      		</li>
-      	{% endfor %}
-      </ul>
-    </div>  
-  </div>
-  {% include '/admin/_right.html' %}
-  <!---->
-  <!-- Modal -->
-  <div id="categoryModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-	<div class="modal-header">
-		<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-		<h3 id="myModalLabel">分类设置</h3>
-	</div>
-	<div class="modal-body">
-		<form class="form-horizontal" id="categoryForm">
-			{{ category_form.csrf_token }}
-			{{ category_form.id }}
+      <form class="form-horizontal" id="categoryForm">
+			{{ topic_form.csrf_token }}
+			{{ topic_form.id }}
 			<div class="control-group">
 				<label class="control-label" for="inputWarning">名称</label>
 				<div class="controls">
-				{{ category_form.name }}
+				{{ topic_form.name }}
 				<span class="help-inline error" id="inputWarning"></span>
 				</div>
 			</div>
 			<div class="control-group">
 				<label class="control-label" for="inputWarning">父级id</label>
 				<div class="controls">
-				{{ category_form.parent_id }}
+				{{ topic_form.parent_id }}
 				<span class="help-inline error" id="inputWarning"></span>
 				</div>
 			</div>
 			<div class="control-group">
 				<label class="control-label" for="inputWarning">权重</label>
 				<div class="controls">
-				{{ category_form.priority }}
+				{{ topic_form.priority }}
 				<span class="help-inline error" id="inputWarning"></span>
 				</div>
 			</div>
 		</form>
-	</div>
-	<div class="modal-footer">
-		<button class="btn" data-dismiss="modal" aria-hidden="true">关闭</button>
-		<button class="btn btn-primary" id="doSave">确定</button>
-	</div>
+    </div>  
   </div>
-  <!--/Modal-->
+  {% include '/admin/_right.html' %}
 </div>
 {% endblock %}
 {% block js %}
