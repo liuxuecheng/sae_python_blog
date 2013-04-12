@@ -7,27 +7,9 @@
   <div class="span8">
     <div class="conl basediv">
       <h3>添加文章</h3>
-      <form class="form" id="categoryForm">
-			{{ topic_form.csrf_token }}
-			<div class="control">
-				<div class="controls">
-				{{ topic_form.title(placeholder="标题")}}
-				<span class="help-inline error" id="inputWarning"></span>
-				</div>
-			</div>
-			<div class="control">
-				<div class="controls">
-				{{ topic_form.content(rows="20",cols="80") }}
-				<span class="help-inline error" id="inputWarning"></span>
-				</div>
-			</div>
-			<div class="control">
-				<div class="controls">
-				{{ topic_form.priority(placeholder="权重") }}
-				<span class="help-inline error" id="inputWarning"></span>
-				</div>
-			</div>
-		</form>
+      <section>
+		<textarea id="markItUp" rows="20" cols="80">Welcome to the markItUp! 2.0 &lt;strong&gt;Html demo&lt;/strong&gt;</textarea>
+	</section>
     </div>  
   </div>
   {% include '/admin/_right.html' %}
@@ -36,5 +18,9 @@
 {% block js %}
 	<script src="/static/markitup/jquery.markitup.js"></script>
 	<script src="/static/markitup/sets/html/set.js"></script>
-	<script src="/static/js/topic/topic.js"></script>
 {% endblock js%}
+<script>
+		$(function()	{
+			$('#markItUp').markItUp( markItUpSettings );
+		});
+	</script>
