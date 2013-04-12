@@ -1,9 +1,11 @@
 from flask import Blueprint, render_template
 from domain.model.user import User
 from domain import db_session
+from domain.model.topic import Category
+
 
 main_page = Blueprint('main_page', __name__)
-
+g.category = Category.query.filter(Category.parent_id == 0).all()
 
 @main_page.route('/')
 def index():

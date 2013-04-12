@@ -2,10 +2,11 @@ from flask import Blueprint, render_template, request, g, session, redirect, url
 from webapp.user.form import LoginForm
 from domain.model.user import User
 import subprocess
+from domain.model.topic import Category
 
 
 user_page = Blueprint("user_page", __name__)
-
+g.category = Category.query.filter(Category.parent_id == 0).all()
 
 @user_page.route("/user/register", methods=('POST','GET'))
 def register():
