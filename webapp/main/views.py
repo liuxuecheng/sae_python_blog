@@ -5,7 +5,12 @@ from domain.model.topic import Category
 
 
 main_page = Blueprint('main_page', __name__)
-g.category = Category.query.filter(Category.parent_id == 0).all()
+
+
+@main_page.context_processor
+def _():
+	g.category = Category.query.filter(Category.parent_id == 0).all()
+    return dict(g_category=g.category)
 
 @main_page.route('/')
 def index():

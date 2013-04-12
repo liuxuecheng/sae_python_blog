@@ -6,7 +6,10 @@ from domain.model.topic import Category
 
 
 user_page = Blueprint("user_page", __name__)
-g.category = Category.query.filter(Category.parent_id == 0).all()
+@user_page.context_processor
+def _():
+	g.category = Category.query.filter(Category.parent_id == 0).all()
+    return dict(g_category=g.category)
 
 @user_page.route("/user/register", methods=('POST','GET'))
 def register():
