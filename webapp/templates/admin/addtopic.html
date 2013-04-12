@@ -1,6 +1,7 @@
 {% extends '/layout/base.html' %}
 {% block title %}管理{% endblock %}
-{% block css %}<link href="/static/css/user.css" rel="stylesheet">{% endblock %}
+{% block css %}<link rel="stylesheet" type="text/css" href="/static/markitup/skins/default/styles.css" />
+<link rel="stylesheet" type="text/css" href="/static/markitup/sets/html/styles.css" />{% endblock %}
 {% block content %}
 <div class="row">
   <div class="span8">
@@ -33,7 +34,7 @@
 </div>
 {% endblock %}
 {% block js %}
-	<script src="/static/js/topic/category.js"></script>
-	<script src="/static/js/topic/category.js"></script>
-	<script src="/static/js/topic/category.js"></script>
+	<script src="/static/js/topic/topic.js"></script>
+	<script src="/static/markitup/jquery.markitup.js"></script>
+	<script src="/static/markitup/sets/html/set.js"></script>
 {% endblock js%}
