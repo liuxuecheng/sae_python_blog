@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template
+from flask import Blueprint, render_template, g
 from domain.model.user import User
 from domain import db_session
 from domain.model.topic import Category
