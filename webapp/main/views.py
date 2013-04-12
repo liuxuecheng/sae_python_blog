@@ -10,7 +10,7 @@ main_page = Blueprint('main_page', __name__)
 @main_page.context_processor
 def _():
 	g.category = Category.query.filter(Category.parent_id == 0).all()
-    return dict(g_category=g.category)
+    return dict(code=200)
 
 @main_page.route('/')
 def index():
