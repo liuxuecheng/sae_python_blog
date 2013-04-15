@@ -28,10 +28,10 @@ def before_request():
 		g.user = User.query.filter(User.id == session['user_id']).first()
 	else:
 		g.user = None
-		
+
 
 #app teardown request
 @app.teardown_request
 def shutdown_session(exception=None):
 	db_session.remove()
-	db_session.close() 		
+	db_session.close()
