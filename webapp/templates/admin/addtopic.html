@@ -7,9 +7,7 @@
   <div class="span8">
     <div class="conl basediv">
       <h3>添加文章</h3>
-      <section>
-		<textarea id="markItUp" rows="20" cols="80">Welcome to the markItUp! 2.0 &lt;strong&gt;Html demo&lt;/strong&gt;</textarea>
-	</section>
+	  <textarea id="markItUp" rows="20" cols="80">Welcome to the markItUp! 2.0 &lt;strong&gt;Html demo&lt;/strong&gt;</textarea>
     </div>  
   </div>
   {% include '/admin/_right.html' %}
@@ -18,9 +16,38 @@
 {% block js %}
 	<script src="/static/markitup/jquery.markitup.js"></script>
 	<script src="/static/markitup/sets/html/set.js"></script>
-	<script>
-		$(function()	{
-			$('#markItUp').markItUp( markItUpSettings );
+	<script type="text/javascript">
+		$(function() {
+		// Add markItUp! to your textarea in one line
+		// $('textarea').markItUp( { Settings }, { OptionalExtraSettings } );
+		$('#markItUp').markItUp(mySettings);
+
+
+
+		// You can add content from anywhere in your page
+		// $.markItUp( { Settings } );	
+		$('.add').click(function() {
+				$('#markItUp').markItUp('insert',
+				{ 	openWith:'<opening tag>',
+					closeWith:'<\/closing tag>',
+					placeHolder:"New content"
+				}
+			);
+				return false;
 		});
-	</script>
+
+		// And you can add/remove markItUp! whenever you want
+		// $(textarea).markItUpRemove();
+		$('.toggle').click(function() {
+			if ($("#markItUp.markItUpEditor").length === 1) {
+					$("#markItUp").markItUp('remove');
+				$("span", this).text("get markItUp! back");
+			} else {
+				$('#markItUp').markItUp(mySettings);
+				$("span", this).text("remove markItUp!");
+			}
+				return false;
+		});
+		});
+</script>
 {% endblock js%}
