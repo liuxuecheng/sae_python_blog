@@ -78,12 +78,13 @@ def add(id = 0):
 	if request.method == 'POST' and topic_form.validate():
 		if topic:
 			topic_form.populate_obj(topic)
+			db_session.commit()
 		else:
 			topic = Topic(topic_form.title.data)
 			topic.content = topic_form.content.data
 			db_session.add(topic)
+			db_session.commit()
 			
-		db_session.commit()
 		return redirect('/admin/topic/list')	
 	else:				
 		return render_template('/admin/addtopic.html',
