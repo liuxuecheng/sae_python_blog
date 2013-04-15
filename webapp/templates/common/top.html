@@ -14,10 +14,13 @@
           </li>
           {% if g.category%}
           <li class="dropdown">
-            <a href="/category/all" class="dropdown-toggle" data-toggle="dropdown">
+            <a href="###" class="dropdown-toggle" data-toggle="dropdown">
               分类<b class="caret"></b>
             </a>
             <ul class="dropdown-menu">
+              <li>
+                <a href="/category/all">所有</a>
+              </li>
               {% for c in g.category %}
               <li>
                 <a href="#">{{ c.name }}</a>
