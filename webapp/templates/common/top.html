@@ -9,6 +9,8 @@
       <a class="brand" href="/">Fainle's Blog</a>
       {% if 'about' in request.path %}
         {% set about_class="active" %}
+      {% elif 'category' in request.path %}
+        {% set category_class="active" %}    
       {% else %}
         {% set index_class="active" %}
       {% endif %}
@@ -18,7 +20,7 @@
             <a href="/">首页</a>
           </li>
           {% if g.category%}
-          <li class="dropdown">
+          <li class="dropdown {{ category_class }}">
             <a href="###" class="dropdown-toggle" data-toggle="dropdown">
               分类<b class="caret"></b>
             </a>
