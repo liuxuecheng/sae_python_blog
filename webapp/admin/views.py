@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from flask import Blueprint, render_template, jsonify, request, redirect
 from domain.model.user import User
 from domain.model.topic import Category, Topic, TopicTag
@@ -84,7 +85,7 @@ def add(id = 0):
 			topic.content = topic_form.content.data
 			db_session.add(topic)
 			db_session.commit()
-			
+
 		return redirect('/admin/topic/list')	
 	else:				
 		return render_template('/admin/addtopic.html',

@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from flask import Blueprint, render_template, request, g, session, redirect, url_for
 from webapp.user.form import LoginForm
 from domain.model.user import User
