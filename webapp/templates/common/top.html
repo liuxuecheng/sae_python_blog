@@ -7,9 +7,14 @@
         <span class="icon-bar"></span>
       </button>
       <a class="brand" href="/">Fainle's Blog</a>
+      {% if 'about' in request.path %}
+        {% set about_class="active" %}
+      {% else %}
+        {% set index_class="active" %}
+      {% endif %}
       <div class="nav-collapse collapse">
         <ul class="nav">
-          <li class="active">
+          <li class="{{ index_class }}">
             <a href="/">首页</a>
           </li>
           {% if g.category%}
@@ -30,7 +35,7 @@
           </li>
           {% endif %}
           <li>
-            <a href="/about">关于我</a>
+            <a href="/about {{ about_class }}">关于我</a>
           </li>
         </ul>
         {% if g.user.id %}
