@@ -68,6 +68,7 @@ def edit_category():
 def del_category():
 	pass
 
+
 @admin_page.route('/admin/topic/add', methods=("POST","GET"))
 @admin_page.route('/admin/topic/add/<int:id>', methods=("POST","GET"))
 @login_required
@@ -86,7 +87,7 @@ def add(id = 0):
 			db_session.add(topic)
 			db_session.commit()
 
-		return redirect('/admin/topic/list')	
+		return redirect('/admin/topic/list')
 	else:				
 		return render_template('/admin/addtopic.html',
 			topic_form = topic_form,

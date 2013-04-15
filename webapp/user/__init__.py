@@ -6,7 +6,7 @@ from flask import g, request, redirect, abort, url_for
 def login_required(func):
 	@wraps(func)
 	def _(*args, **kwargs):
-		if g.user is not None:	
+		if g.user is not None:
 			return func(*args, **kwargs)
 		else:
 			return redirect(url_for('user_page.login', next=request.path))	
@@ -20,6 +20,6 @@ def is_admin(func):
 		if g.user is not None and g.user.id == 1:
 			return func(*args, **kwargs)
 		else:
-			return abort(404)	
+			return abort(404)
 	
-	return _						
+	return _
