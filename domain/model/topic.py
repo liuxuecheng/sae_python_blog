@@ -31,7 +31,7 @@ class Topic(Base):
 	content = Column(Text)
 	priority = Column(Integer, default=0)
 
-	def __init__(self, name):
+	def __init__(self, title):
 		self.title = title
 
 	def __repr__(self):

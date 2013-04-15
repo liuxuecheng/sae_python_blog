@@ -80,7 +80,6 @@ def add(id = 0):
 			topic_form.populate_obj(topic)
 		else:
 			topic = Topic(topic_form.title.data)
-			topic.title = topic_form.title.data
 			topic.content = topic_form.content.data
 			db_session.add(topic)
 			
