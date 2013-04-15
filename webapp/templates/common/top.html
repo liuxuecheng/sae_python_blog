@@ -12,6 +12,7 @@
           <li class="active">
             <a href="/">首页</a>
           </li>
+          {% if g.category%}
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               分类<b class="caret"></b>
@@ -24,6 +25,7 @@
               {% endfor %}
             </ul>
           </li>
+          {% endif %}
           <li>
             <a href="/about">关于我</a>
           </li>
