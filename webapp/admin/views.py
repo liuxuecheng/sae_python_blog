@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, jsonify, request
+from flask import Blueprint, render_template, jsonify, request, redirect
 from domain.model.user import User
 from domain.model.topic import Category, Topic, TopicTag
 from domain import db_session
