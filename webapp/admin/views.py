@@ -74,6 +74,19 @@ def del_category():
 def add(id = 0):
 	topic = Topic.query.filter(Topic.id == id).first()
 	topic_form = TopicForm(obj = topic)
-	return render_template('/admin/addtopic.html',
-		topic_form = topic_form,
-		)		
+
+	if request.method == 'POST' and topic_form.validate():
+		if topic:
+			topic_form.populate_obj(topic)
+		else:
+			topic = Topic(topic_form.name.data)
+			topic.title = topic_form.title.data
+			topic.content = topic_form.content.data
+			db_session.add(topic)
+			
+		db_session.commit()
+		return redirect('/admin/topic/list')	
+	else:				
+		return render_template('/admin/addtopic.html',
+			topic_form = topic_form,
+			)		
