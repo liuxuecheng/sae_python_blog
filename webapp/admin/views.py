@@ -50,7 +50,8 @@ def add_category():
 			db_session.commit()
 		data['code'] = 200
 	else:				
-		data['code'] = 401	
+		data['code'] = 401
+		data['errors'] = category_form.errors	
 	
 	return jsonify(data)
 
