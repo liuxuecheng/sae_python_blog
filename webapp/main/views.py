@@ -13,11 +13,13 @@ def _():
 	g.category = Category.query.filter(Category.parent_id == 0).all()
 	return dict(code=200)
 
+
 @main_page.route('/')
 def index():
-	user_info = User.query.all()
-	#user_info = db_session.query(User).all()
-	return render_template('/sites/index.html')
+	topic = Topic.query.offset(0).limit(10)
+	return render_template('/sites/index.html',
+		topic = topic
+		)
 
 
 @main_page.route('/about')
