@@ -9,6 +9,7 @@ function addcategory(){
 		success:function(data){
 			if (data.code == 200){
 				$('#categoryModal').modal('hide');
+				window.location.reload() 
 			}else{
 				alert(data.code);
 			}
