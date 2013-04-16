@@ -9,9 +9,7 @@ class Category(Base):
 	"""
 	__tablename__ = 'topic_category'
 	id = Column(Integer, primary_key=True)
-	parent_id = Column(Integer, default=0)
 	name = Column(String(20), default='')
-	priority = Column(Integer, default=0)
 
 	def __init__(self, name):
 		self.name = name
