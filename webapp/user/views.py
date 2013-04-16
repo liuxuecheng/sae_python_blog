@@ -11,7 +11,7 @@ user_page = Blueprint("user_page", __name__)
 
 @user_page.context_processor
 def _():
-	g.category = Category.query.filter(Category.parent_id == 0).all()
+	g.category = Category.query.all()
 	return dict(code=200)
 
 
