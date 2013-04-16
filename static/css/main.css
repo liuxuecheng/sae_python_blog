@@ -48,3 +48,8 @@ body{
     border-bottom: 1px solid #EEEEEE;
     margin: 10px 0 20px 0;
 }
+
+.text-sd {
+    color: #BABABA;
+    margin: 0 10px 0 0
+}
