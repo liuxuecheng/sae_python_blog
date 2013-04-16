@@ -43,3 +43,8 @@ body{
     height: 0;
     visibility: hidden;
 }
+
+.line{
+    border-bottom: 1px solid #EEEEEE;
+    margin: 10px 0 10px 0;
+}
