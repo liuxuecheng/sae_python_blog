@@ -17,16 +17,9 @@
         <h4>最新文章</h4>
       </div>
       <ul class="unstyled">
-        <li><a href="">本机定时自动更新svn</a></li>
-        <li><a href="">ubuntu 解决firefox flash 乱码问题</a></li>
-        <li><a href="">linux 安装php amqp扩展</a></li>
-        <li><a href="">pymemcompat.h:10:20: 致命错误： Python.h：没有那个文件或目录 解决方案</a></li>
-        <li><a href="">安装Mysql-python 的时候出现mysql_config not found解决方案</a></li>
-        <li><a href="">本机定时自动更新svn</a></li>
-        <li><a href="">ubuntu 解决firefox flash 乱码问题</a></li>
-        <li><a href="">linux 安装php amqp扩展</a></li>
-        <li><a href="">pymemcompat.h:10:20: 致命错误： Python.h：没有那个文件或目录 解决方案</a></li>
-        <li><a href="">安装Mysql-python 的时候出现mysql_config not found解决方案</a></li>
+        {% for t in topic%}
+        <li><a href="">{{ t.title }}</a></li>
+        {% endfor %}
       </ul>
     </div>
 
