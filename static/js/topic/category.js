@@ -7,7 +7,11 @@ function addcategory(){
 		dataType:'json',
 		data:$("#categoryForm").serialize(),
 		success:function(data){
-			alert(data.code);
+			if (data.code == 200){
+				$('#categoryModal').modal('hide');
+			}else{
+				alert(data.code);
+			}
 		}
 	})
 }
