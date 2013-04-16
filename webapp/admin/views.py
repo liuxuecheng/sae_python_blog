@@ -44,8 +44,6 @@ def add_category():
 			db_session.commit()
 		else:
 			category = Category(category_form.name.data)
-			category.parent_id = category_form.parent_id.data
-			category.priority = category_form.priority.data
 			db_session.add(category)
 			db_session.commit()
 		data['code'] = 200
