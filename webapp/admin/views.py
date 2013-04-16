@@ -88,7 +88,7 @@ def add(id = 0):
 			db_session.commit()
 
 		return redirect('/admin/topic/list')
-	else:				
+	else:
 		return render_template('/admin/addtopic.html',
 			topic_form = topic_form,
 			)		
