@@ -32,7 +32,7 @@ class Topic(Base):
 	category_id = Column(Integer, ForeignKey('category.id'))
 	priority = Column(Integer, default=0)
 
-	category = relationship("Category", backref=backref('topic', order_by=id))
+	category = relationship("Category", backref=backref('id', order_by=id))
 
 	def __init__(self, title):
 		self.title = title
