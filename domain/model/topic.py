@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 from domain.model import Base
-from sqlalchemy import Column, Integer, String, Text
+from sqlalchemy import Column, Integer, String, Text, ForeignKey
 
 
 class Category(Base):
@@ -28,7 +28,10 @@ class Topic(Base):
 	id = Column(Integer, primary_key=True)
 	title = Column(String(20))
 	content = Column(Text)
+	category_id = Column(Integer, ForeignKey('category.id'))
 	priority = Column(Integer, default=0)
+
+	category = relationship("Category", backref=backref('topic', order_by=id))
 
 	def __init__(self, title):
 		self.title = title
