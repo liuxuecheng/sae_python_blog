@@ -19,4 +19,4 @@ class TopicForm(Form):
 	title = TextField('title', default='')
 	content = TextAreaField('content', default='')
 	priority = IntegerField('priority', default=0)
-	category_id = SelectField('category_id', choices=category_data)
+	category_id = SelectField('category_id', choices=category_data, coerce=int)
