@@ -1,7 +1,8 @@
 # -*- coding: utf-8 -*-
 from package.flask_wtf.form import Form
-from package.wtforms import TextField, TextAreaField, validators, HiddenField, IntegerField
+from package.wtforms import TextField, TextAreaField, validators, HiddenField, IntegerField, SelectField
 from package.wtforms.validators import Required, Length, ValidationError, Email
+from domain.model.topic import Category
 
 
 class CategoryForm(Form):
@@ -13,6 +14,9 @@ class CategoryForm(Form):
 
 
 class TopicForm(Form):
+	category_data = [(c.id, c.name) for c in Category.query.all()]
+
 	title = TextField('title', default='')
 	content = TextAreaField('content', default='')
-	priority = IntegerField('priority', default=0) 	
+	priority = IntegerField('priority', default=0)
+	category_id = SelectField('category_id', choices=category_data) 	

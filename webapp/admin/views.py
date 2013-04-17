@@ -83,6 +83,7 @@ def add(id = 0):
 		else:
 			topic = Topic(topic_form.title.data)
 			topic.content = topic_form.content.data
+			topic.category_id = topic_form.category_id.data
 			db_session.add(topic)
 			db_session.commit()
 
