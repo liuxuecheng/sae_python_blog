@@ -11,7 +11,7 @@
         <small class="text-sd">浏览：303</small>
         <small class="text-sd">回复：10</small>
         <small class="text-sd">发布：2013-04-15 10:08:50</small></p>
-      <p>{{ t.content | truncate(10,false,'...') | safe }}</p>
+      <p>{{ t.content | safe }}</p>
       <p><i class="icon-tags"></i><a href="#">python</a></p>
       <p><a href="/topic/{{ t.id }}">查看 ({{ t.content | length }})</a></p>
       <div class="line"></div>
