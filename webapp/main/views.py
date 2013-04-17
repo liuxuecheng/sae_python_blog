@@ -26,6 +26,11 @@ def index():
 		)
 
 
-@main_page.route('/about')
+@main_page.route('/about/blog')
 def about():
 	return render_template('/sites/about.html')
+
+
+@main_page.route('/about/me')
+def about():
+	return render_template('/sites/me.html')	
