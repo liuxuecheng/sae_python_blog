@@ -2,7 +2,6 @@
 from flask import Blueprint, render_template, request, g, session, redirect, url_for
 from webapp.user.form import LoginForm
 from domain.model.user import User
-import subprocess
 from domain.model.topic import Category
 
 
@@ -37,12 +36,10 @@ def login():
 
 @user_page.route("/user/logout")
 def logout():
-
 	session.pop('user_id', None)
 	return redirect('/user')
 
 
 @user_page.route("/user")
 def user():
-	g.info = dir(subprocess)
 	return render_template('/user/index.html')	
