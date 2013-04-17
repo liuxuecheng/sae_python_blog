@@ -27,10 +27,10 @@ def index():
 
 
 @main_page.route('/about/blog')
-def about():
+def about_blog():
 	return render_template('/sites/about.html')
 
 
 @main_page.route('/about/me')
-def about():
+def about_me():
 	return render_template('/sites/me.html')	
