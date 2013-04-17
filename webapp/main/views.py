@@ -17,7 +17,7 @@ def _():
 @main_page.route('/')
 def index():
 	topic = Topic.query.offset(0).limit(10)
-	category_ids = list[i.category_id for i in topic]
+	category_ids = [i.category_id for i in topic]
 	category = dict((c.category_id, c) for c in Category.query.filtle(Category.id.in_(category_ids)))
 
 	return render_template('/sites/index.html',
