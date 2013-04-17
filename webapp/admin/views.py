@@ -75,8 +75,6 @@ def del_category():
 def add(id = 0):
 	topic = Topic.query.filter(Topic.id == id).first()
 	topic_form = TopicForm(obj = topic)
-	topic_form.validate()
-	return jsonify(topic_form.errors)
 
 	if request.method == 'POST' and topic_form.validate():
 		if topic:
