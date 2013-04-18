@@ -16,7 +16,7 @@ def _():
 
 @topic_page.route('/topic/<int:topic_id>')
 def show_topic(topic_id):
-	topic = Topic.query.filter(Topic.id == topic_id)
+	topic = Topic.query.filter(Topic.id == topic_id).first()
 	category = Category.query.filter(Category.id == topic.category_id)
 
 	return render_template('/topic/show.html',
