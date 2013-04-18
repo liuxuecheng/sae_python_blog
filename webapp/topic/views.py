@@ -5,7 +5,7 @@ from domain import db_session
 from domain.model.topic import Category, Topic
 
 
-topic_page = Blueprint('main_page', __name__)
+topic_page = Blueprint('topic_page', __name__)
 
 
 @topic_page.context_processor
