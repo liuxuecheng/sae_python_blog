@@ -1,0 +1,43 @@
+{% extends "/layout/base.html" %}
+{% block title %}首页{% endblock %}
+{% block content %}
+<div class="row">
+  <div class="span8">
+    <div class="conl basediv">
+      <h4><a href="/topic/{{ t.id }}">{{ topic.title }}</a></h4>
+      <p class="muted">
+        <small class="text-sd">分类：<a href="/category/{{ topic.category_id }}">{{ category.name }}</a></small>
+        <small class="text-sd">浏览：303</small>
+        <small class="text-sd">回复：10</small>
+        <small class="text-sd">发布：2013-04-15 10:08:50</small></p>
+      <p>{{ topic.content | striptags | truncate(200, False, '......') }}</p>
+      <p><i class="icon-tags"></i><a href="#">python</a></p>
+      <p><a href="/topic/{{ topic.id }}">查看 ({{ topic.content | length }})</a></p>
+      <div class="line"></div>
+    </div>  
+  </div>
+  <div class="span4">
+
+    <div class="conr basediv">
+      <div class="titleBar">
+        <h4>最新文章</h4>
+      </div>
+      <ul class="unstyled">
+      </ul>
+    </div>
+
+    <div class="conr basediv">
+      <div class="titleBar">
+        <h4>文章归档</h4>
+      </div>
+      <ul>
+        <li><a href="">2013 年二月</a></li>
+        <li><a href="">2013 年二月</a></li>
+        <li><a href="">2013 年二月</a></li>
+        <li><a href="">2013 年二月</a></li>
+        <li><a href="">2013 年二月</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+{% endblock%}
