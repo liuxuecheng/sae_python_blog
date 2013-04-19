@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 from sqlalchemy.ext.declarative import declarative_base, declared_attr
-from sqlalchemy import DateTime, Column
+from sqlalchemy import DateTime, Column, func
 
 class _Base(object):
     """
