@@ -28,7 +28,7 @@ class Topic(Base):
 	__tablename__ = 'topic'
 
 	id = Column(Integer, primary_key=True)
-	title = Column(String(20))
+	title = Column(String(80))
 	content = Column(Text)
 	category_id = Column(Integer, default=0)
 	priority = Column(Integer, default=0)

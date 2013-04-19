@@ -9,7 +9,7 @@
         <small class="text-sd">分类：<a href="/category/{{ topic.category_id }}">{{ category.name }}</a></small>
         <small class="text-sd">浏览：</small>
         <small class="text-sd">回复：</small>
-        <small class="text-sd">发布：</small></p>
+        <small class="text-sd">发布：{{ topic.created_at }}</small></p>
       <p>{{ topic.content | safe }}</p>
       <p><i class="icon-tags"></i><a href="#">python</a></p>
     </div>  
