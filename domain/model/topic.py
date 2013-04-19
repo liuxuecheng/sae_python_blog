@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from domain.model import Base
+from domain.model import Base, timestamp_mixin
 from sqlalchemy import Column, Integer, String, Text, ForeignKey
 from sqlalchemy.orm import relationship, backref
 
@@ -19,6 +19,7 @@ class Category(Base):
 		return "<topoc_category('%s')>" %(self.name, self.name)	
 
 
+@timestamp_mixin
 class Topic(Base):
 	"""
 	topic model

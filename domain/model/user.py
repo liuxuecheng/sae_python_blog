@@ -1,7 +1,9 @@
 # -*- coding: utf-8 -*-
-from domain.model import Base
+from domain.model import Base, timestamp_mixin
 from sqlalchemy import Column, Integer, String
 
+
+@timestamp_mixin
 class User(Base):
 	__tablename__ = 'user'
 
