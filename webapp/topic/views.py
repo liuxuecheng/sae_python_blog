@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from flask import Blueprint, render_template, g
+from flask import Blueprint, render_template, g, abort
 from domain.model.user import User
 from domain import db_session
 from domain.model.topic import Category, Topic
@@ -20,7 +20,7 @@ def show_topic(topic_id):
 	if topic:
 		category = Category.query.filter(Category.id == topic.category_id).first()
 	else:
-		category=[]	
+		abort(404)	
 
 	return render_template('/topic/show.html',
 		topic = topic,
