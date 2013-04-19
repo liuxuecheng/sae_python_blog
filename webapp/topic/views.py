@@ -19,6 +19,8 @@ def show_topic(topic_id):
 	topic = Topic.query.filter(Topic.id == topic_id).first()
 	if topic:
 		category = Category.query.filter(Category.id == topic.category_id).first()
+	else:
+		category=[]	
 
 	return render_template('/topic/show.html',
 		topic = topic,
