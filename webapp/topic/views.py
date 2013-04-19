@@ -23,3 +23,14 @@ def show_topic(topic_id):
 		topic = topic,
 		category=category,
 		)
+
+
+@topic_page.route('/category/<int:category_id>')
+def category(category_id):
+	category = Category.query.filter(Category.id == topic.category_id).first()
+	topic = Topic.query.filter(Topic.category_id == category_id).all()
+
+	return render_template('/topic/category.html',
+		topic = topic,
+		category=category,
+		)
