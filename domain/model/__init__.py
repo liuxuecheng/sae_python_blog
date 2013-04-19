@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy.ext.declarative import declarative_base, declared_attr
 from sqlalchemy import DateTime
 
 class _Base(object):
