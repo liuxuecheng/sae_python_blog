@@ -35,5 +35,6 @@ def before_request():
 #app teardown request
 @app.teardown_request
 def shutdown_session(exception=None):
+	db_session.rollback()
 	db_session.remove()
 	db_session.close()
