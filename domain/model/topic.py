@@ -32,6 +32,7 @@ class Topic(Base):
 	content = Column(Text)
 	category_id = Column(Integer, default=0)
 	priority = Column(Integer, default=0)
+	count = relationship("TopicCount", order_by="topic_count.id")
 
 	def __init__(self, title):
 		self.title = title
@@ -60,6 +61,9 @@ class TopicCount(Base):
 
 	__tablename__ = 'topic_count'
 	id = Column(Integer, primary_key=True)
-	topic_id = Column(Integer)
+	topic_id = Column(Integer, ForeignKey('topic.id'))
 	views = Column(Integer)
 	reply_num = Column(Integer)
+
+
+	user = relationship("Topic", backref=backref('topic_id', order_by=id))
