@@ -50,4 +50,16 @@ class TopicTag(Base):
 	name = Column(String(20), default='')
 
 	def __init__(self):
-		pass		
+		pass
+
+
+class TopicCount(Base):
+	"""
+	topic count
+	"""
+
+	__tablename__ = 'topic_count'
+	id = Column(Integer, primary_key=True)
+	topic_id = Column(Integer)
+	views = Column(Integer)
+	reply_num = Column(Integer)

@@ -14,7 +14,7 @@ def create_db():
 	"""
 
 	from domain.model.user import User
-	from domain.model.topic import Topic, Category, TopicTag
+	from domain.model.topic import Topic, Category, TopicTag, TopicCount
 	Base.metadata.create_all(engine) 
 
 	return 'create db'
