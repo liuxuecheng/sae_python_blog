@@ -8,8 +8,8 @@
       <h4><a href="/topic/{{ t.id }}">{{ t.title }}</a></h4>
       <p class="muted">
         <small class="text-sd">分类：<a href="/category/{{ t.category_id }}">{{ category.get(t.category_id).name }}</a></small>
-        <small class="text-sd">浏览：</small>
-        <small class="text-sd">回复：</small>
+        <small class="text-sd">浏览：{{ count.get(t.id).views }}</small>
+        <small class="text-sd">回复：{{ count.get(t.id).reply_num }}</small>
         <small class="text-sd">发布：{{ t.created_at }}</small></p>
       <p>{{ t.content | striptags | truncate(200, False, '......') }}</p>
       <p><i class="icon-tags"></i><a href="#">python</a></p>
