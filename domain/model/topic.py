@@ -65,5 +65,5 @@ class TopicCount(Base):
 	__tablename__ = 'topic_count'
 	id = Column(Integer, primary_key=True)
 	topic_id = Column(Integer, ForeignKey('topic.id'))
-	views = Column(Integer)
-	reply_num = Column(Integer)
+	views = Column(Integer, default=0)
+	reply_num = Column(Integer, default=0)
