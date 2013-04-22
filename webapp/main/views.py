@@ -23,6 +23,7 @@ def index():
 
 	return render_template('/sites/index.html',
 		topic = topic,
+		count=count,
 		category=category,
 		)
 
