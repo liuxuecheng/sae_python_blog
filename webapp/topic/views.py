@@ -27,6 +27,7 @@ def show_topic(topic_id):
 	return render_template('/topic/show.html',
 		topic = topic,
 		category=category,
+		count=topic.count
 		)
 
 
