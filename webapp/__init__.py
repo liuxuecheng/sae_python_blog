@@ -27,7 +27,8 @@ app.register_blueprint(topic_page)
 @app.before_request
 def before_request():
 	if 'user_id' in session:
-		if g.get(user) is None:
+		if g.user is not None:
+		else:
 			g.user = User.query.filter(User.id == session['user_id']).first()
 	else:
 		g.user = None
