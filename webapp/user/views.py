@@ -18,7 +18,9 @@ def _():
 def register():
 	
 	register_form = RegisterForm(request.form)
-	return render_template('/user/register.html')	
+	return render_template('/user/register.html',
+		registerform = register_form
+		)	
 
 
 @user_page.route("/user/login", methods=("POST","GET"))
