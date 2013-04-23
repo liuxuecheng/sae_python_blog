@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from flask import Flask, g, session, url_for
+from flask import Flask, g, session
 from webapp.mydb.db import db_page
 from webapp.main.views import main_page
 from webapp.user.views import user_page
@@ -22,7 +22,6 @@ app.register_blueprint(user_page)
 app.register_blueprint(admin_page)
 app.register_blueprint(topic_page)
 
-url_for('/', filename='google6b4228096abe7a0c.html')
 
 
 #app before request Category

@@ -36,3 +36,8 @@ def about_blog():
 @main_page.route('/about/me')
 def about_me():
 	return render_template('/sites/me.html')	
+
+
+@main_page.route('/google6b4228096abe7a0c.html')
+def google_websites():
+	return render_template('/sites/google6b4228096abe7a0c.html')
