@@ -2,6 +2,7 @@
 from flask import Blueprint
 from domain import engine, db_session
 from domain.model import Base
+import hashlib
 
 
 db_page = Blueprint('db_page', __name__)
@@ -27,9 +28,11 @@ def init_data():
 	"""	
 	from domain.model.user import User
 
+	sha1 = hashlib.sha1()
+
 	user = User("hehehas@gmail.com")
 	user.nickname = 'fainle'
-	user.password = "123456"
+	user.password = sha1.update('123456').hexdigest()
 
 	db_session.add(user)
 	db_session.commit()
