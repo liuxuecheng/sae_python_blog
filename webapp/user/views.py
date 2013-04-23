@@ -18,6 +18,10 @@ def _():
 def register():
 	
 	register_form = RegisterForm(request.form)
+	if request.method == 'POST':
+		if register_form.validate():
+			pass
+			
 	return render_template('/user/register.html',
 		registerform = register_form
 		)	
