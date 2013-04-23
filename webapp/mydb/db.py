@@ -29,10 +29,11 @@ def init_data():
 	from domain.model.user import User
 
 	sha1 = hashlib.sha1()
+	sha1.update('123456')
 
 	user = User("hehehas@gmail.com")
 	user.nickname = 'fainle'
-	user.password = sha1.update('123456').hexdigest()
+	user.password = sha1.hexdigest()
 
 	db_session.add(user)
 	db_session.commit()
