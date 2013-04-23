@@ -49,3 +49,10 @@ class LoginForm(Form):
 			flash(u'邮箱或密码错误','error')
 
 		return is_user_valid
+
+
+class RegisterForm(Form):
+	email = TextField('email',validators=[
+			Required(u'邮件不能为空!')	,
+			Email(u'邮件格式错误!'),
+		])

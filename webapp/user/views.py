@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 from flask import Blueprint, render_template, request, g, session, redirect, url_for
-from webapp.user.form import LoginForm
+from webapp.user.form import LoginForm, RegisterForm
 from domain.model.user import User
 from domain.model.topic import Category
 
@@ -17,6 +17,7 @@ def _():
 @user_page.route("/user/register", methods=('POST','GET'))
 def register():
 	
+	register_form = RegisterForm(request.form)
 	return render_template('/user/register.html')	
 
 
