@@ -10,16 +10,16 @@
   {% endif %}
   {% endwith %}
   
-  {{ loginform.csrf_token }}
-  {{ loginform.email(placeholder='Email address',class='input-block-level')}}
-  {% if loginform.errors.email %}
-  	<p class="text-error">{{ loginform.errors.email[0] }}</p>
+  {{ registerform.csrf_token }}
+  {{ registerform.email(placeholder='Email address',class='input-block-level')}}
+  {% if registerform.errors.email %}
+  	<p class="text-error">{{ registerform.errors.email[0] }}</p>
   {% endif %}
-  {{ loginform.password(placeholder='Password',class='input-block-level',type='password') }}
-  {% if loginform.errors.password %}
-  	<p class="text-error">{{ loginform.errors.password[0] }}</p>
+  {{ registerform.password(placeholder='Password',class='input-block-level',type='password') }}
+  {% if registerform.errors.password %}
+  	<p class="text-error">{{ registerform.errors.password[0] }}</p>
   {% endif %}
-  {{ loginform.password(placeholder='Password',class='input-block-level',type='password') }}
+  {{ registerform.password(placeholder='Password',class='input-block-level',type='password') }}
   <button class="btn btn-large btn-primary" type="submit">登录</button>
 </form>
 {% endblock %}
