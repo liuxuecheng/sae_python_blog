@@ -22,7 +22,7 @@ app.register_blueprint(user_page)
 app.register_blueprint(admin_page)
 app.register_blueprint(topic_page)
 
-url_for('', filename='google6b4228096abe7a0c.html')
+url_for('/', filename='google6b4228096abe7a0c.html')
 
 
 #app before request Category
