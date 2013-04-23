@@ -19,7 +19,10 @@
   {% if registerform.errors.password %}
   	<p class="text-error">{{ registerform.errors.password[0] }}</p>
   {% endif %}
-  {{ registerform.password(placeholder='Password',class='input-block-level',type='password') }}
+  {{ registerform.password2(placeholder='Password',class='input-block-level',type='password') }}
+  {% if registerform.errors.password2 %}
+    <p class="text-error">{{ registerform.errors.password2[0] }}</p>
+  {% endif %}
   <button class="btn btn-large btn-primary" type="submit">登录</button>
 </form>
 {% endblock %}

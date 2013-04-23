@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 from package.wtforms import Form, TextField, validators
-from package.wtforms.validators import Required, Length, ValidationError, Email
+from package.wtforms.validators import Required, Length, ValidationError, Email, EqualTo
 from domain.model.user import User
 from flask import flash
 import hashlib
@@ -60,4 +60,8 @@ class RegisterForm(Form):
 	password = TextField('password', validators=[
 			Required(u'密码不能为空!'),
 			Length(min=5, max=18, message=u'密码长度不对'),
+			EqualTo('password2', message=u'两次输入的密码不一样')
+		])
+
+	password2 = TextField('password2'),
 		])
