@@ -19,9 +19,7 @@
   {% if loginform.errors.password %}
   	<p class="text-error">{{ loginform.errors.password[0] }}</p>
   {% endif %}
-  <label class="checkbox">
-    <input type="checkbox" value="remember-me" name="rememberme">记住我
-  </label>
+  {{ loginform.password(placeholder='Password',class='input-block-level',type='password') }}
   <button class="btn btn-large btn-primary" type="submit">登录</button>
 </form>
 {% endblock %}
