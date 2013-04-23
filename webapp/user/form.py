@@ -34,8 +34,8 @@ class LoginForm(Form):
 
 		if user is not None:
 			sha1 = hashlib.sha1()
-			sha1.update(user.password)
-			if sha1.hexdigest() == self.password.data:
+			sha1.update(self.password.data)
+			if user.password  == sha1.hexdigest():
 				self.user = user
 				is_user_valid = True
 			else:
