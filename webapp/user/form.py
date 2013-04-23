@@ -3,6 +3,7 @@ from package.wtforms import Form, TextField, validators
 from package.wtforms.validators import Required, Length, ValidationError, Email
 from domain.model.user import User
 from flask import flash
+import hashlib
 
 
 class LoginForm(Form):
@@ -32,7 +33,9 @@ class LoginForm(Form):
 		user = User.query.filter(User.email == self.email.data).first()
 
 		if user is not None:
-			if user.password == self.password.data:
+			sha1 = hashlib.sha1()
+			sha1.update(user.password)
+			if sha1.hexdigest() == self.password.data:
 				self.user = user
 				is_user_valid = True
 			else:
