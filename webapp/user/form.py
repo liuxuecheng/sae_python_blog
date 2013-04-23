@@ -62,6 +62,4 @@ class RegisterForm(Form):
 			Length(min=5, max=18, message=u'密码长度不对'),
 			EqualTo('password2', message=u'两次输入的密码不一样')
 		])
-
-	password2 = TextField('password2'),
-		])
+	password2 = TextField('password2')
