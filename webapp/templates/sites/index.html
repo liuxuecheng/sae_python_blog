@@ -22,6 +22,17 @@
 
     <div class="conr basediv">
       <div class="titleBar">
+        <h4>分类</h4>
+      </div>
+      <ul class="unstyled">
+        {% for c in g.category%}
+        <li><a href="/category/{{ c.id }}">{{ c.name }} ({{ c.num }})</a></li>
+        {% endfor %}
+      </ul>
+    </div>
+
+    <div class="conr basediv">
+      <div class="titleBar">
         <h4>最新文章</h4>
       </div>
       <ul class="unstyled">
