@@ -11,6 +11,7 @@ class Category(Base):
 	__tablename__ = 'topic_category'
 	id = Column(Integer, primary_key=True)
 	name = Column(String(20), default='')
+	num = Column(Integer, default=0)
 
 	def __init__(self, name):
 		self.name = name
