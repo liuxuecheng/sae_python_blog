@@ -52,10 +52,17 @@ class LoginForm(Form):
 
 
 class RegisterForm(Form):
+
+	def check_email(form, field):
+		user = User.query.filter(User.email = field.data).first()
+		if user:
+			raise ValidationError(u'邮箱地址已存在，请换一个地址重试')
+
 	email = TextField('email',validators=[
 			Required(u'邮件不能为空!')	,
 			Email(u'邮件格式错误!'),
 			Length(min=4, max=50, message=u'长度应该4-50字节之间')
+			check_email()
 		])
 	nickname = TextField('nickname',validators=[
 			Required(u'昵称不能为空!')	,
