@@ -39,7 +39,7 @@
         </ul>
         {% if g.user.id %}
         <p class="navbar-text pull-right">
-          <a href="/user/{{ g.user.id }}" class="navbar-link">fainle</a>
+          <a href="/user/{{ g.user.id }}" class="navbar-link">{{ g.user.nickname }}</a>
           <a href="/user/logout" class="navbar-link">退出</a>
         </p>
         {% else %}
