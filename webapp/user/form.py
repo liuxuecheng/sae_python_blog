@@ -54,9 +54,14 @@ class LoginForm(Form):
 class RegisterForm(Form):
 
 	def check_email(form, field):
-		user = User.query.filter(User.email == field.data).first()
-		if user:
+		user_email = User.query.filter(User.email == field.data).first()
+		if user_email:
 			raise ValidationError(u'邮箱地址已存在，请换一个地址重试')
+
+	def check_nickname(form, field):
+		user_nickname = User.query.filter(User.nickname == field.data).first()
+		if user:
+			raise ValidationError(u'昵称已存在，请换一个昵称重试')		
 
 	email = TextField('email',validators=[
 			Required(u'邮件不能为空!')	,
@@ -66,7 +71,8 @@ class RegisterForm(Form):
 		])
 	nickname = TextField('nickname',validators=[
 			Required(u'昵称不能为空!')	,
-			Length(min=2, max=20, message=u'长度应该2-20字节之间')
+			Length(min=2, max=20, message=u'长度应该2-20字节之间'),
+			check_nickname
 		])
 	password = TextField('password', validators=[
 			Required(u'密码不能为空!'),

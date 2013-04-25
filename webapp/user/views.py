@@ -4,6 +4,7 @@ from webapp.user.form import LoginForm, RegisterForm
 from domain.model.user import User
 from domain.model.topic import Category
 from domain import db_session
+import hashlib
 
 
 user_page = Blueprint("user_page", __name__)
@@ -23,7 +24,9 @@ def register():
 		if register_form.validate():
 			user = User(register_form.email.data)
 			user.nickname = register_form.nickname.data
-			user.password = register_form.password.data
+			sha1 = hashlib.sha1()
+			sha1 = update(register_form.password.data)
+			user.password = sha1
 			db_session.add(user)
 			db_session.commit()	
 			return redirect(request.args.get('next') or '/user')
