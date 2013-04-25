@@ -26,7 +26,7 @@ def register():
 			user.password = register_form.password.data
 			db_session.add(user)
 			db_session.commit()	
-			
+			return redirect(request.args.get('next') or '/user')
 	return render_template('/user/register.html',
 		registerform = register_form
 		)	
