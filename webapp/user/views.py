@@ -28,7 +28,8 @@ def register():
 			sha1.update(register_form.password.data)
 			user.password = sha1.hexdigest()
 			db_session.add(user)
-			db_session.commit()	
+			db_session.commit()
+			session['user_id'] = user.id	
 			return redirect(request.args.get('next') or '/user')
 	return render_template('/user/register.html',
 		registerform = register_form
