@@ -60,7 +60,7 @@ class RegisterForm(Form):
 
 	def check_nickname(form, field):
 		user_nickname = User.query.filter(User.nickname == field.data).first()
-		if user:
+		if user_nickname:
 			raise ValidationError(u'昵称已存在，请换一个昵称重试')		
 
 	email = TextField('email',validators=[
