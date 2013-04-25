@@ -54,7 +54,7 @@ class LoginForm(Form):
 class RegisterForm(Form):
 
 	def check_email(form, field):
-		user = User.query.filter(User.email = field.data).first()
+		user = User.query.filter(User.email == field.data).first()
 		if user:
 			raise ValidationError(u'邮箱地址已存在，请换一个地址重试')
 
