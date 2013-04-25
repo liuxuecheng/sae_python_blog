@@ -26,7 +26,7 @@ def register():
 			user.nickname = register_form.nickname.data
 			sha1 = hashlib.sha1()
 			sha1 = update(register_form.password.data)
-			user.password = sha1
+			user.password = sha1.hexdigest()
 			db_session.add(user)
 			db_session.commit()	
 			return redirect(request.args.get('next') or '/user')
