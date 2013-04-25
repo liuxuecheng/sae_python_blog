@@ -61,7 +61,7 @@ class RegisterForm(Form):
 	email = TextField('email',validators=[
 			Required(u'邮件不能为空!')	,
 			Email(u'邮件格式错误!'),
-			Length(min=4, max=50, message=u'长度应该4-50字节之间')
+			Length(min=4, max=50, message=u'长度应该4-50字节之间'),
 			check_email()
 		])
 	nickname = TextField('nickname',validators=[
