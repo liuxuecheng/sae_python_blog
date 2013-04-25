@@ -15,6 +15,10 @@
   {% if registerform.errors.email %}
   	<p class="text-error">{{ registerform.errors.email[0] }}</p>
   {% endif %}
+  {{ registerform.nickname(placeholder='Nickname',class='input-block-level') }}
+  {% if registerform.errors.nickname %}
+    <p class="text-error">{{ registerform.errors.nickname[0] }}</p>
+  {% endif %}
   {{ registerform.password(placeholder='Password',class='input-block-level',type='password') }}
   {% if registerform.errors.password %}
   	<p class="text-error">{{ registerform.errors.password[0] }}</p>

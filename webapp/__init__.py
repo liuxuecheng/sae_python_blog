@@ -23,7 +23,6 @@ app.register_blueprint(admin_page)
 app.register_blueprint(topic_page)
 
 
-
 #app before request Category
 @app.before_request
 def before_request():

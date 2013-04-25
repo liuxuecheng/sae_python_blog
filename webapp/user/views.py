@@ -3,6 +3,7 @@ from flask import Blueprint, render_template, request, g, session, redirect, url
 from webapp.user.form import LoginForm, RegisterForm
 from domain.model.user import User
 from domain.model.topic import Category
+from domain.model import db_session
 
 
 user_page = Blueprint("user_page", __name__)
@@ -20,7 +21,11 @@ def register():
 	register_form = RegisterForm(request.form)
 	if request.method == 'POST':
 		if register_form.validate():
-			pass
+			user = User(register_form.email.data)
+			user.nickname = register_form.nickname.data
+			user.password = register_form.password.data
+			db_session.add(user)
+			db_session.commit()	
 			
 	return render_template('/user/register.html',
 		registerform = register_form
