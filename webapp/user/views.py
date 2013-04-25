@@ -3,7 +3,7 @@ from flask import Blueprint, render_template, request, g, session, redirect, url
 from webapp.user.form import LoginForm, RegisterForm
 from domain.model.user import User
 from domain.model.topic import Category
-from domain.model import db_session
+from domain import db_session
 
 
 user_page = Blueprint("user_page", __name__)
