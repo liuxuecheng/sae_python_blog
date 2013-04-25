@@ -78,12 +78,13 @@ def add(id = 0):
 
 	if request.method == 'POST' and topic_form.validate():
 		if topic:
-			topic_form.populate_obj(topic)
 			if topic.category_id != topic_form.category_id.data:
 				new_category = Category.get(topic_form.category_id.data)
 				new_category.num += 1
 				old_category = Category.get(topic.category_id)
-				old_category.num -= 1 
+				old_category.num -= 1
+			topic_form.populate_obj(topic)
+			
 		else:
 			topic = Topic(topic_form.title.data)
 			topic.content = topic_form.content.data
