@@ -105,7 +105,7 @@ def add(id = 0):
 @login_required
 @is_admin
 def testtag():
-	l = ['python', 'golang', 'linux', 'ubuntu']
+	l = ['python', 'golang', 'linux', 'ubuntu', 'mysql']
 	for i in l:
 		a = TopicTag.query.filter(TopicTag.name == i).first()
 		if a:
