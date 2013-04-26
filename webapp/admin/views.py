@@ -84,7 +84,7 @@ def add(id = 0):
 				old_category = Category.get(topic.category_id)
 				old_category.num -= 1
 
-			tag_list = topic_form.tag.data.split(" ") if topic_form.tag.data is not " "
+			tag_list = topic_form.tag.data.split(" ") if topic_form.tag.data is not ''
 			for tag_name in tag_list:
 				tag = TopicTag.query.filter(TopicTag.name == tag_name).first()
 				if tag:
@@ -111,7 +111,7 @@ def add(id = 0):
 
 			category = 	Category.get(topic_form.category_id.data)
 			category.num += 1
-			tag_list = topic_form.tag.data.split(" ") if topic_form.tag.data is not " "
+			tag_list = topic_form.tag.data.split(" ") if topic_form.tag.data is not ''
 			for tag_name in tag_list:
 				tag = TopicTag.query.filter(TopicTag.name == tag_name).first()
 				if tag:
