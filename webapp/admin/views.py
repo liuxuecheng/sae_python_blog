@@ -84,21 +84,22 @@ def add(id = 0):
 				old_category = Category.get(topic.category_id)
 				old_category.num -= 1
 
-			tag_list = topic_form.tag.data.split(" ") if topic_form.tag.data is not ''
-			for tag_name in tag_list:
-				tag = TopicTag.query.filter(TopicTag.name == tag_name).first()
-				if tag:
-					tag.num += 1
-					topic_to_tag = TopicToTag.query.filter(TopicToTag.topic_id == id).filter(TopicToTag.tag_id == tag.id).first()
-					if topic_to_tag is None:
-						topic_to_tag = TopicToTag(id, tag.id)
+			tag_list = topic_form.tag.data.split(" ")
+			if tag_list is not ''
+				for tag_name in tag_list:
+					tag = TopicTag.query.filter(TopicTag.name == tag_name).first()
+					if tag:
+						tag.num += 1
+						topic_to_tag = TopicToTag.query.filter(TopicToTag.topic_id == id).filter(TopicToTag.tag_id == tag.id).first()
+						if topic_to_tag is None:
+							topic_to_tag = TopicToTag(id, tag.id)
+							db_session.add(topic_to_tag)
+					else:
+						tag = TopicTag(tag_name)
+						db_session.add(tag)	
+						db_session.flush()
+						topic_to_tag = TopicToTag(topic.id, tag.id)
 						db_session.add(topic_to_tag)
-				else:
-					tag = TopicTag(tag_name)
-					db_session.add(tag)	
-					db_session.flush()
-					topic_to_tag = TopicToTag(topic.id, tag.id)
-					db_session.add(topic_to_tag)
 								
 			topic_form.populate_obj(topic)
 			db_session.commit()	
@@ -111,17 +112,18 @@ def add(id = 0):
 
 			category = 	Category.get(topic_form.category_id.data)
 			category.num += 1
-			tag_list = topic_form.tag.data.split(" ") if topic_form.tag.data is not ''
-			for tag_name in tag_list:
-				tag = TopicTag.query.filter(TopicTag.name == tag_name).first()
-				if tag:
-					tag.num += 1
-				else:
-					tag = TopicTag(tag_name)
-					db_session.add(tag)
-					db_session.flush()
-				topic_to_tag = TopicToTag(topic.id, tag.id)
-				db_session.add(topic_to_tag)	
+			tag_list = topic_form.tag.data.split(" ")
+			if tag_list is not ''
+				for tag_name in tag_list:
+					tag = TopicTag.query.filter(TopicTag.name == tag_name).first()
+					if tag:
+						tag.num += 1
+					else:
+						tag = TopicTag(tag_name)
+						db_session.add(tag)
+						db_session.flush()
+					topic_to_tag = TopicToTag(topic.id, tag.id)
+					db_session.add(topic_to_tag)	
 			db_session.commit()	
 		return redirect('/admin/topic/list')
 	else:
