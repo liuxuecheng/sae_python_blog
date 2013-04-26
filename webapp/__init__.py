@@ -38,4 +38,3 @@ def shutdown_session(exception=None):
 	db_session.rollback()
 	db_session.remove()
 	db_session.close()
-	abort(404)
