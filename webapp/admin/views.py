@@ -106,6 +106,8 @@ def add(id = 0):
 			topic.content = topic_form.content.data
 			topic.category_id = topic_form.category_id.data
 			db_session.add(topic)
+			db_session.flush()
+
 			category = 	Category.get(topic_form.category_id.data)
 			category.num += 1
 			tag_list = topic_form.tag.data.split(" ")
@@ -116,9 +118,10 @@ def add(id = 0):
 				else:
 					tag = TopicTag(tag_name)
 					db_session.add(tag)
+					db_session.flush()
 				topic_to_tag = TopicToTag(topic.id, tag.id)
 				db_session.add(topic_to_tag)	
-			db_session.commit()	
+				
 		return redirect('/admin/topic/list')
 	else:
 		return render_template('/admin/addtopic.html',
