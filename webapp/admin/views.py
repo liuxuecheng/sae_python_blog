@@ -110,4 +110,6 @@ def testtag():
 		if TopicTag.query.filter(TopicTag.name == i).first():
 			TopicTag.query.filter(TopicTag.name == i).num += 1
 		else:
-			db_session.add(TopicTag(i))			
+			db_session.add(TopicTag(i))
+
+	db_session.commit()		
