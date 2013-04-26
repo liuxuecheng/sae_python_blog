@@ -55,8 +55,11 @@ class TopicTag(Base):
 	name = Column(String(20), default='')
 	num = Column(Integer, default=0)
 
-	def __init__(self):
-		pass
+	def __init__(self, name):
+		self.name = name
+
+	def __repr__(self):
+		return "<topic('%s','%s')>" %(self.id, self.name)
 
 
 class TopicCount(Base):
