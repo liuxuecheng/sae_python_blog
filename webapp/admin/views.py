@@ -121,7 +121,7 @@ def add(id = 0):
 					db_session.flush()
 				topic_to_tag = TopicToTag(topic.id, tag.id)
 				db_session.add(topic_to_tag)	
-				
+			db_session.commit()	
 		return redirect('/admin/topic/list')
 	else:
 		return render_template('/admin/addtopic.html',
