@@ -98,4 +98,16 @@ def add(id = 0):
 	else:
 		return render_template('/admin/addtopic.html',
 			topic_form = topic_form,
-			)		
+			)
+
+
+@admin_page.route('/admin/topic/testtag')
+@login_required
+@is_admin
+def testtag():
+	l = ['python', 'golang', 'linux']
+	for i in l:
+		if TopicTag.query.filter(Topic.name == i).first():
+			TopicTag.query.filter(Topic.name == i).num += 1
+		else:
+			db_session.add(TopicTag(i))			
