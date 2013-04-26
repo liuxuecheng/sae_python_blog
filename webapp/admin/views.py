@@ -96,6 +96,7 @@ def add(id = 0):
 				else:
 					tag = TopicTag(tag_name)
 					db_session.add(tag)	
+					db_session.flush()
 					topic_to_tag = TopicToTag(topic.id, tag.id)
 					db_session.add(topic_to_tag)
 								
