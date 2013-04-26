@@ -92,8 +92,15 @@ def add(id = 0):
 			db_session.add(topic)
 			category = 	Category.get(topic_form.category_id.data)
 			category.num += 1
+			l = topic_form.category_id.data.split(" ")
+			for i in l:
+				a = TopicTag.query.filter(TopicTag.name == i).first()
+				if a:
+					a.num += 1
+				else:
+					db_session.add(TopicTag(i))
 
-		db_session.commit()	
+			db_session.commit()	
 		return redirect('/admin/topic/list')
 	else:
 		return render_template('/admin/addtopic.html',
@@ -105,12 +112,6 @@ def add(id = 0):
 @login_required
 @is_admin
 def testtag():
-	l = ['python', 'golang', 'linux', 'ubuntu', 'mysql']
-	for i in l:
-		a = TopicTag.query.filter(TopicTag.name == i).first()
-		if a:
-			a.num += 1
-		else:
-			db_session.add(TopicTag(i))
+	
 
 	db_session.commit()		
