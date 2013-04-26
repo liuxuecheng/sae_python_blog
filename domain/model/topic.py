@@ -80,5 +80,6 @@ class TopicToTag(Base):
 	topic and tag relationships
 	""" 
 	__tablename__ = 'topic_tag_relationships'
+	id = Column(Integer, primary_key=True)
 	topic_id = Column(Integer, default=0)
 	tag_id = Column(Integer, default=0)	
