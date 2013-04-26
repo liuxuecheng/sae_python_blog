@@ -100,7 +100,7 @@ def add(id = 0):
 					db_session.add(topic_to_tag)
 								
 			topic_form.populate_obj(topic)
-			
+			db_session.commit()
 		else:
 			topic = Topic(topic_form.title.data)
 			topic.content = topic_form.content.data
