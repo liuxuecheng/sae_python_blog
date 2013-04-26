@@ -73,3 +73,12 @@ class TopicCount(Base):
 	topic_id = Column(Integer, ForeignKey('topic.id'))
 	views = Column(Integer, default=0)
 	reply_num = Column(Integer, default=0)
+
+
+class TopicToTag(Base):
+	"""
+	topic and tag relationships
+	""" 
+	__tablename__ = 'topic_tag_relationships'
+	topic_id = Column(Integer, default=0)
+	tag_id = Column(Integer, default=0)	
