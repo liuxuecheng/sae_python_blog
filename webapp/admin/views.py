@@ -88,10 +88,10 @@ def add(id = 0):
 			for tag_name in tag_list:
 				tag = TopicTag.query.filter(TopicTag.name == tag_name).first()
 				if tag:
-					tag.num += 1 
-					topic_to_tag = TopicToTag.query.filter(TopicToTag.topic_id == topic.id, TopicToTag.tag_id == tag.id).first()
+					tag.num += 1
+					topic_to_tag = TopicToTag.query.filter(TopicToTag.topic_id == id, TopicToTag.tag_id == tag.id).first()
 					if topic_to_tag is None:
-						topic_to_tag = TopicToTag(topic.id, tag.id)
+						topic_to_tag = TopicToTag(id, tag.id)
 						db_session.add(topic_to_tag)
 				else:
 					tag = TopicTag(tag_name)
@@ -100,7 +100,7 @@ def add(id = 0):
 					db_session.add(topic_to_tag)
 								
 			topic_form.populate_obj(topic)
-			db_session.commit()
+			db_session.commit()	
 		else:
 			topic = Topic(topic_form.title.data)
 			topic.content = topic_form.content.data
