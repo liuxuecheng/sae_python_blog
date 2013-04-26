@@ -12,13 +12,17 @@
 			<div class="control">
 				<div class="controls">
 				{{ topic_form.title(placeholder="标题")}}
-				<span class="help-inline error" id="inputWarning"></span>
+				{% if loginform.errors.title %}
+				<span class="help-inline error" id="inputWarning">{{ loginform.errors.title[0] }}</span>
+				{% endif %}
 				</div>
 			</div>
 			<div class="control">
 				<div class="controls">
 				{{ topic_form.content(id="markItUp",rows="20",cols="80") }}
-				<span class="help-inline error" id="inputWarning"></span>
+				{% if loginform.errors.content %}
+				<span class="help-inline error" id="inputWarning">{{ loginform.errors.content[0] }}</span>
+				{% endif %}
 				</div>
 			</div>
 			<div class="control">
