@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
 from flask import Blueprint, render_template, jsonify, request, redirect
 from domain.model.user import User
-from domain.model.topic import Category, Topic, TopicTag, 
+from domain.model.topic import Category, Topic, TopicTag, TopicToTag
 from domain import db_session
 from webapp.user import login_required, is_admin
-from webapp.admin.form import CategoryForm, TopicForm, TopicToTag
+from webapp.admin.form import CategoryForm, TopicForm
 
 
 admin_page = Blueprint('admin_page', __name__)
