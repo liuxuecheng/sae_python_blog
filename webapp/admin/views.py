@@ -89,7 +89,7 @@ def add(id = 0):
 				tag = TopicTag.query.filter(TopicTag.name == tag_name).first()
 				if tag:
 					tag.num += 1
-					topic_to_tag = TopicToTag.query.filter(TopicToTag.topic_id == id, TopicToTag.tag_id == tag.id).first()
+					topic_to_tag = TopicToTag.query.filter(TopicToTag.topic_id == id, TopicToTag.tag_id == 0).first()
 					if topic_to_tag is None:
 						topic_to_tag = TopicToTag(id, tag.id)
 						db_session.add(topic_to_tag)
