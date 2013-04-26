@@ -9,7 +9,7 @@
       <h3>添加文章</h3>
       <form class="form" id="categoryForm" method="post" action="">
 			{{ topic_form.csrf_token }}
-			<div class="control-group {% if topic_form.errors.content %}error{% endif %}">
+			<div class="control-group {% if topic_form.errors.title %}error{% endif %}">
 				<div class="controls">
 				{{ topic_form.title(placeholder="标题")}}
 				</div>
