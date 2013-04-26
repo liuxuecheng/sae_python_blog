@@ -9,20 +9,14 @@
       <h3>添加文章</h3>
       <form class="form" id="categoryForm" method="post" action="">
 			{{ topic_form.csrf_token }}
-			<div class="control">
+			<div class="control {% if topic_form.errors.content %}error{% endif %}">
 				<div class="controls">
 				{{ topic_form.title(placeholder="标题")}}
-				{% if topic_form.errors.title %}
-				<span class="text-error" id="inputWarning">{{ topic_form.errors.title[0] }}</span>
-				{% endif %}
 				</div>
 			</div>
-			<div class="control">
+			<div class="control {% if topic_form.errors.content %}error{% endif %}">
 				<div class="controls">
 				{{ topic_form.content(id="markItUp",rows="20",cols="80") }}
-				{% if topic_form.errors.content %}
-				<span class="text-error" id="inputWarning">{{ topic_form.errors.content[0] }}</span>
-				{% endif %}
 				</div>
 			</div>
 			<div class="control">
