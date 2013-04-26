@@ -57,6 +57,7 @@ class TopicTag(Base):
 
 	def __init__(self, name):
 		self.name = name
+		self.num = 1
 
 	def __repr__(self):
 		return "<topic('%s','%s')>" %(self.id, self.name)
