@@ -12,16 +12,16 @@
 			<div class="control">
 				<div class="controls">
 				{{ topic_form.title(placeholder="标题")}}
-				{% if loginform.errors.title %}
-				<span class="help-inline error" id="inputWarning">{{ loginform.errors.title[0] }}</span>
+				{% if topic_form.errors.title %}
+				<span class="help-inline error" id="inputWarning">{{ topic_form.errors.title[0] }}</span>
 				{% endif %}
 				</div>
 			</div>
 			<div class="control">
 				<div class="controls">
 				{{ topic_form.content(id="markItUp",rows="20",cols="80") }}
-				{% if loginform.errors.content %}
-				<span class="help-inline error" id="inputWarning">{{ loginform.errors.content[0] }}</span>
+				{% if topic_form.errors.content %}
+				<span class="help-inline error" id="inputWarning">{{ topic_form.errors.content[0] }}</span>
 				{% endif %}
 				</div>
 			</div>
