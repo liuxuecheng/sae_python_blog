@@ -82,4 +82,8 @@ class TopicToTag(Base):
 	__tablename__ = 'topic_tag_relationships'
 	id = Column(Integer, primary_key=True)
 	topic_id = Column(Integer, default=0)
-	tag_id = Column(Integer, default=0)	
+	tag_id = Column(Integer, default=0)
+
+	def __init__(self, topic_id, tag_id):
+		self.topic_id = topic_id
+		self.tag_id = tag_id	

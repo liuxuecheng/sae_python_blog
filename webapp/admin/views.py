@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
 from flask import Blueprint, render_template, jsonify, request, redirect
 from domain.model.user import User
-from domain.model.topic import Category, Topic, TopicTag
+from domain.model.topic import Category, Topic, TopicTag, 
 from domain import db_session
 from webapp.user import login_required, is_admin
-from webapp.admin.form import CategoryForm, TopicForm 
+from webapp.admin.form import CategoryForm, TopicForm, TopicToTag
 
 
 admin_page = Blueprint('admin_page', __name__)
@@ -83,6 +83,19 @@ def add(id = 0):
 				new_category.num += 1
 				old_category = Category.get(topic.category_id)
 				old_category.num -= 1
+
+			tag_list = topic_form.tag.data.split(" ")
+			for tag_name in tag_list:
+				tag = TopicTag.query.filter(TopicTag.name == i).first()
+				topic_to_tag = TopicToTag.query.filter(TopicToTag.topic_id == topic.id, TopicToTag.tag_id == tag.id).first()
+				if topic_to_tag is None:
+					if tag:
+						tag.num += 1
+					else:
+						tag = TopicTag(tag_name)
+						db_session.add(tag)	
+					topic_to_tag = TopicToTag(topic.id, tag.id)
+					db_session.add(topic_to_tag)	
 			topic_form.populate_obj(topic)
 			
 		else:
@@ -92,14 +105,16 @@ def add(id = 0):
 			db_session.add(topic)
 			category = 	Category.get(topic_form.category_id.data)
 			category.num += 1
-			l = topic_form.tag.data.split(" ")
-			for i in l:
-				a = TopicTag.query.filter(TopicTag.name == i).first()
-				if a:
-					a.num += 1
+			tag_list = topic_form.tag.data.split(" ")
+			for tag_name in tag_list:
+				tag = TopicTag.query.filter(TopicTag.name == i).first()
+				if tag:
+					tag.num += 1
 				else:
-					db_session.add(TopicTag(i))
-
+					tag = TopicTag(tag_name)
+					db_session.add(tag)
+				topic_to_tag = TopicToTag(topic.id, tag.id)
+				db_session.add(topic_to_tag)	
 			db_session.commit()	
 		return redirect('/admin/topic/list')
 	else:
