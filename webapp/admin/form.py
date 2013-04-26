@@ -16,7 +16,12 @@ class CategoryForm(Form):
 class TopicForm(Form):
 	category_data = [(c.id, c.name) for c in Category.query.all()]
 
-	title = TextField('title', default='')
-	content = TextAreaField('content', default='')
+	title = TextField('title',validators=[
+		Required(u'标题不能为空')
+		])
+	content = TextAreaField('content', validators=[
+		Required(u'内容不能为空')
+		])
 	priority = IntegerField('priority', default=0)
 	category_id = SelectField('category_id', choices=category_data, coerce=int)
+	tag = TextField('tag', default='')
