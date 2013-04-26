@@ -92,7 +92,7 @@ def add(id = 0):
 			db_session.add(topic)
 			category = 	Category.get(topic_form.category_id.data)
 			category.num += 1
-			l = topic_form.category_id.data.split(" ")
+			l = topic_form.tag.data.split(" ")
 			for i in l:
 				a = TopicTag.query.filter(TopicTag.name == i).first()
 				if a:
