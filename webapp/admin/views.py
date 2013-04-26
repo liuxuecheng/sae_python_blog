@@ -107,8 +107,9 @@ def add(id = 0):
 def testtag():
 	l = ['python', 'golang', 'linux']
 	for i in l:
-		if TopicTag.query.filter(TopicTag.name == i).first():
-			TopicTag.query.filter(TopicTag.name == i).num += 1
+		a = TopicTag.query.filter(TopicTag.name == i).first()
+		if a:
+			a.num += 1
 		else:
 			db_session.add(TopicTag(i))
 
