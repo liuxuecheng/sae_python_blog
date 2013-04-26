@@ -14,7 +14,7 @@ class CategoryForm(Form):
 
 
 class TopicForm(Form):
-	category_data = [(c.id, c.name) for c in Category.query.all()]
+	category_data = [(c.id, c.name) for c in Category.query.order_by(Category.id.asc()).all()]
 
 	title = TextField('title',validators=[
 		Required(u'标题不能为空')
