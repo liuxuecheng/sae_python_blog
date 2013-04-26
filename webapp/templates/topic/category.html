@@ -8,9 +8,9 @@
       <h4><a href="/topic/{{ t.id }}">{{ t.title }}</a></h4>
       <p class="muted">
         <small class="text-sd">分类：<a href="/category/{{ t.category_id }}">{{ category.name }}</a></small>
-        <small class="text-sd">浏览：{{ count.views }}</small>
-        <small class="text-sd">回复：{{ count.reply_num }}</small>
-        <small class="text-sd">发布：{{ topic.created_at }}</small></p>
+        <small class="text-sd">浏览：{{ t.count.views }}</small>
+        <small class="text-sd">回复：{{ t.count.reply_num }}</small>
+        <small class="text-sd">发布：{{ t.topic.created_at }}</small></p>
       <p>{{ t.content | striptags | truncate(200, False, '......') }}</p>
       <p><i class="icon-tags"></i><a href="#">python</a></p>
       <p><a href="/topic/{{ t.id }}">查看 ({{ t.content | length }})</a></p>

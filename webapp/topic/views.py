@@ -38,6 +38,5 @@ def category(category_id):
 
 	return render_template('/topic/category.html',
 		topic = topic,
-		category=category,
-		count=topic.count
+		category=category
 		)
