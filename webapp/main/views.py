@@ -2,7 +2,7 @@
 from flask import Blueprint, render_template, g
 from domain.model.user import User
 from domain import db_session
-from domain.model.topic import Category, Topic
+from domain.model.topic import Category, Topic, TopicTag
 
 
 main_page = Blueprint('main_page', __name__)
@@ -20,11 +20,13 @@ def index():
 	category_ids = [i.category_id for i in topic]
 	category = dict((c.id, c) for c in Category.query.filter(Category.id.in_(category_ids)))
 	count = dict((t.id, t.count) for t in topic)
+	tag = TopicTag.query.all()
 
 	return render_template('/sites/index.html',
 		topic = topic,
 		count=count,
 		category=category,
+		tag=tag,
 		)
 
 

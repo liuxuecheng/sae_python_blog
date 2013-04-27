@@ -48,14 +48,12 @@
 
     <div class="conr basediv">
       <div class="titleBar">
-        <h4>文章归档</h4>
+        <h4>标签</h4>
       </div>
       <ul>
-        <li><a href="">2013 年二月</a></li>
-        <li><a href="">2013 年二月</a></li>
-        <li><a href="">2013 年二月</a></li>
-        <li><a href="">2013 年二月</a></li>
-        <li><a href="">2013 年二月</a></li>
+        {% for t in tag %}
+        <li><a href="/tag/{{ t.name }}">{{ t.name }}({{ t.num }})</a></li>
+        {% endfor %}
       </ul>
     </div>
   </div>
