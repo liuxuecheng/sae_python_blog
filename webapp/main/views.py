@@ -20,7 +20,7 @@ def index():
 	category_ids = [i.category_id for i in topic]
 	category = dict((c.id, c) for c in Category.query.filter(Category.id.in_(category_ids)))
 	count = dict((t.id, t.count) for t in topic)
-	tag = TopicTag.query.all()
+	tag = TopicTag.query.order_by(TopicTag.num.desc()).all()
 
 	return render_template('/sites/index.html',
 		topic = topic,
