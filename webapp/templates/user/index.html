@@ -9,8 +9,7 @@
 	{{ i }}
 {% endfor %}
 
-{% set a = 'python linux golang' %}
-{% for s in a|string_split %}
+{% for s in 'python linux golang'|string_split %}
 	{{ s }}
 {% endfor %}
 
