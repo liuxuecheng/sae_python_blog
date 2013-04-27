@@ -107,6 +107,7 @@ def add(id = 0):
 			topic = Topic(topic_form.title.data)
 			topic.content = topic_form.content.data
 			topic.category_id = topic_form.category_id.data
+			topic.tag = topic_form.tag.data
 			db_session.add(topic)
 			db_session.flush()
 

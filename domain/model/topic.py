@@ -33,6 +33,7 @@ class Topic(Base):
 	content = Column(Text)
 	category_id = Column(Integer, default=0)
 	priority = Column(Integer, default=0)
+	tag = Column(String(200), default='')
 
 	#one to one
 	count = relationship('TopicCount', lazy=True, uselist=False, backref='topic')
