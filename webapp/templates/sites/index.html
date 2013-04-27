@@ -12,7 +12,11 @@
         <small class="text-sd">回复：{{ count.get(t.id).reply_num }}</small>
         <small class="text-sd">发布：{{ t.created_at }}</small></p>
       <p>{{ t.content | striptags | truncate(200, False, '......') }}</p>
-      <p><i class="icon-tags"></i><a href="#">python</a></p>
+      <p><i class="icon-tags"></i>
+        {% for tagname in t.tag|string_split %}
+          <a href="/tag/{{ tagname }}">{{ tagname }}</a>
+        {% endfor %}
+      </p>
       <p><a href="/topic/{{ t.id }}">查看 ({{ t.content | length }})</a></p>
       <div class="line"></div>
       {% endfor %}
