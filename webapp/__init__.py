@@ -7,6 +7,7 @@ from webapp.admin.views import admin_page
 from webapp.topic.views import topic_page
 from domain import db_session
 from domain.model.user import User
+from util.filter import register_jinja_filter
 
 
 #app config
@@ -21,6 +22,10 @@ app.register_blueprint(db_page)
 app.register_blueprint(user_page)
 app.register_blueprint(admin_page)
 app.register_blueprint(topic_page)
+
+
+#register jijia2 filter
+register_jinja_filter(app.jinja_env)
 
 
 #app before request Category
