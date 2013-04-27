@@ -6,5 +6,8 @@ def register_jinja_filter(jinja_env):
 
 
 def string_split(s, spstr=None):
-	new_list = s.split(spstr)
+	if s:
+		new_list = s.split(spstr)
+	else:
+		new_list = []
 	return new_list
