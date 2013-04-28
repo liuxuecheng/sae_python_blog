@@ -2,7 +2,7 @@
 from flask import Blueprint, render_template, g, abort
 from domain.model.user import User
 from domain import db_session
-from domain.model.topic import Category, Topic
+from domain.model.topic import Category, Topic, TopicTag
 
 
 topic_page = Blueprint('topic_page', __name__)
@@ -40,3 +40,15 @@ def category(category_id):
 		topic = topic,
 		category=category
 		)
+
+
+@topic_page.route('/tag/<string:tag_name>')
+def category(tag_name=''):
+	tag = TopicTag.query.filter(TopicTag.name == tag_name).first()
+	tagids = [t.id for t in tag]
+	topic = Topic.gets(tagids)
+
+	return render_template('/topic/category.html',
+		topic = topic,
+		category=category
+		)	
