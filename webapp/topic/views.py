@@ -2,7 +2,7 @@
 from flask import Blueprint, render_template, g, abort
 from domain.model.user import User
 from domain import db_session
-from domain.model.topic import Category, Topic, TopicTag
+from domain.model.topic import Category, Topic, TopicTag, TopicToTag
 
 
 topic_page = Blueprint('topic_page', __name__)
