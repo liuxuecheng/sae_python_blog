@@ -45,7 +45,8 @@ def category(category_id):
 @topic_page.route('/tag/<string:tag_name>')
 def category(tag_name=''):
 	tag = TopicTag.query.filter(TopicTag.name == tag_name).first()
-	tagids = [t.id for t in tag]
+	topic_tag = TopicToTag.filter(TopicToTag.tag_id == tag.id).all()
+	tagids = [t.topic_id for t in topic_tag]
 	topic = Topic.gets(tagids)
 
 	return render_template('/topic/category.html',
