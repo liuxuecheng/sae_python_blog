@@ -4,6 +4,10 @@
 <div class="row">
   <div class="span8">
     <div class="conl basediv">
+      <ul class="breadcrumb">
+      <li><a href="/">首页</a> <span class="divider">/</span></li>
+      <li><a href="/category/{{ category.id }}">{{ category.name }}</a></li>
+      </ul>
       <h4><a href="/topic/{{ topic.id }}">{{ topic.title }}</a></h4>
       <p class="muted">
         <small class="text-sd">分类：<a href="/category/{{ topic.category_id }}">{{ category.name }}</a></small>
