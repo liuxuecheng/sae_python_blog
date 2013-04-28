@@ -49,7 +49,8 @@ def category(tag_name=''):
 	tagids = [t.topic_id for t in topic_tag]
 	topic = Topic.gets(tagids)
 
-	return render_template('/topic/category.html',
+	return render_template('/topic/tag.html',
 		topic = topic,
+		tag=tag,
 		category=category
 		)	

@@ -1,0 +1,59 @@
+{% extends "/layout/base.html" %}
+{% block title %}{{ category.name }}{% endblock %}
+{% block content %}
+<div class="row">
+  <div class="span8">
+    <div class="conl basediv">
+      <ul class="breadcrumb">
+      <li><a href="/">首页</a> <span class="divider">/</span></li>
+      <li><a href="/tag/{{ tag.name }}">{{ tag.name }}</a></li>
+      </ul>
+      <div class="alert alert-success">
+        以下是标签为"{{ tag.name }}"的文章列表
+      </div>
+      {% for t in topic%}
+      <h4><a href="/topic/{{ t.id }}">{{ t.title }}</a></h4>
+      <p class="muted">
+        <small class="text-sd">分类：<a href="/category/{{ t.category_id }}">{{ category.name }}</a></small>
+        <small class="text-sd">浏览：{{ t.count.views }}</small>
+        <small class="text-sd">回复：{{ t.count.reply_num }}</small>
+        <small class="text-sd">发布：{{ t.created_at }}</small></p>
+      <p>{{ t.content | striptags | truncate(200, False, '......') }}</p>
+      <p><i class="icon-tags"></i>
+        {% for tagname in t.tag|string_split %}
+          <a href="/tag/{{ tagname }}">{{ tagname }}</a>
+        {% endfor %}
+      </p>
+      <p><a href="/topic/{{ t.id }}">查看 ({{ t.content | length }})</a></p>
+      <div class="line"></div>
+      {% endfor %}
+    </div>  
+  </div>
+  <div class="span4">
+
+    <div class="conr basediv">
+      <div class="titleBar">
+        <h4>最新文章</h4>
+      </div>
+      <ul class="unstyled">
+        {% for t in topic%}
+        <li><a href="">{{ t.title }}</a></li>
+        {% endfor %}
+      </ul>
+    </div>
+
+    <div class="conr basediv">
+      <div class="titleBar">
+        <h4>文章归档</h4>
+      </div>
+      <ul>
+        <li><a href="">2013 年二月</a></li>
+        <li><a href="">2013 年二月</a></li>
+        <li><a href="">2013 年二月</a></li>
+        <li><a href="">2013 年二月</a></li>
+        <li><a href="">2013 年二月</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+{% endblock%}
