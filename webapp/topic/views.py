@@ -32,7 +32,7 @@ def show_topic(topic_id):
 
 
 @topic_page.route('/category/<int:category_id>')
-def category(category_id):
+def category(category_id=0):
 	category = Category.query.filter(Category.id == category_id).first()
 	topic = Topic.query.filter(Topic.category_id == category_id).all()
 
@@ -43,7 +43,7 @@ def category(category_id):
 
 
 @topic_page.route('/tag/<string:tag_name>')
-def category(tag_name=''):
+def tag(tag_name=''):
 	tag = TopicTag.query.filter(TopicTag.name == tag_name).first()
 	topic_tag = TopicToTag.query.filter(TopicToTag.tag_id == tag.id).all()
 	tagids = [t.topic_id for t in topic_tag]
