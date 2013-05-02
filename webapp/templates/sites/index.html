@@ -39,22 +39,22 @@
       <div class="titleBar">
         <h4>最新文章</h4>
       </div>
-      <ul class="unstyled">
+      <ol>
         {% for t in topic%}
         <li><a href="/topic/{{ t.id }}">{{ t.title }}</a></li>
         {% endfor %}
-      </ul>
+      </ol>
     </div>
 
     <div class="conr basediv">
       <div class="titleBar">
         <h4>标签</h4>
       </div>
-      <ol>
+      <ul class="unstyled">
         {% for t in tag %}
         <li><a href="/tag/{{ t.name }}">{{ t.name }}({{ t.num }})</a></li>
         {% endfor %}
-      </ol>
+      </ul>
     </div>
   </div>
 </div>
