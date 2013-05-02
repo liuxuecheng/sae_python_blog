@@ -50,11 +50,11 @@
       <div class="titleBar">
         <h4>标签</h4>
       </div>
-      <ul class="unstyled">
+      <ol>
         {% for t in tag %}
         <li><a href="/tag/{{ t.name }}">{{ t.name }}({{ t.num }})</a></li>
         {% endfor %}
-      </ul>
+      </ol>
     </div>
   </div>
 </div>
