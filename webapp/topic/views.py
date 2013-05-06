@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from flask import Blueprint, render_template, g, abort, request
+from flask import Blueprint, render_template, g, abort, request, jsonify
 from domain.model.user import User
 from domain import db_session
 from domain.model.topic import Category, Topic, TopicTag, TopicToTag, TopicReply
@@ -66,14 +66,16 @@ def add_reply():
 	data = {}
 	id = request.form['id']
 	reply = TopicReply.query.filter(TopicReply.id == id).first()
-	reply_form = ReplyForm(obj = category)
-	if request.method == 'POST' and category_form.validate():
-		if category:
-			category_form.populate_obj(category)
+	reply_form = ReplyForm(obj = reply)
+	if request.method == 'POST' and reply_form.validate():
+		if reply:
+			reply_form.populate_obj(reply)
 			db_session.commit()
 		else:
-			category = Category(category_form.name.data)
-			db_session.add(category)
+			reply = Category(reply_form.name.data)
+			reply.user_id = reply_form.user_id.data
+			reply.topic_id = reply_form.topic_id.data
+			db_session.add(reply)
 			db_session.commit()
 		data['code'] = 200
 	else:				
