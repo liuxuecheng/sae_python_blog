@@ -64,4 +64,7 @@ def tag(tag_name=''):
 @login_required
 def add_reply():
 	data = {}
+	id = request.form['id']
+	reply = TopicReply.query.filter(TopicReply.id == id).first()
+	reply_form = ReplyForm(obj = reply)
 	return jsonify(data)
