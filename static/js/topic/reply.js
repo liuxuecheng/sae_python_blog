@@ -1,11 +1,12 @@
 var doSave = $("#doSave");
 
 function addcategory(){
+	alert('error');
 	$.ajax({
 		type:'POST',
 		url:'/topic/reply',
 		dataType:'json',
-		data:$("#categoryForm").serialize(),
+		data:$("#reply").serialize(),
 		success:function(data){
 			if (data.code == 200){
 				$('#categoryModal').modal('hide');
