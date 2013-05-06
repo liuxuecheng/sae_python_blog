@@ -8,7 +8,6 @@ function addcategory(){
 		data:$("#reply").serialize(),
 		success:function(data){
 			if (data.code == 200){
-				$("#content").val();
 				window.location.reload();
 			}else{
 				alert(data.code);
@@ -20,3 +19,7 @@ function addcategory(){
 doSave.click(function(){
 	addcategory();
 })
+
+$(function(){
+	$("#content").val();
+});
