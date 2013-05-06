@@ -9,7 +9,8 @@ function addcategory(){
 		data:$("#reply").serialize(),
 		success:function(data){
 			if (data.code == 200){
-				//window.location.reload() 
+				$("#content").val();
+				window.location.reload();
 			}else{
 				alert(data.code);
 			}
