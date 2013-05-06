@@ -42,7 +42,7 @@
           <div class="controls">
           {{ reply_form.csrf_token }}
           {{ reply_form.id() }}
-          {{ reply_form.user_id(value="%s") | format(id=g.user.id)}}
+          {{ reply_form.user_id(value="%s") | safe |format(id=g.user.id) }}
           {{ reply_form.topic_id() }}
           {{ reply_form.content(rows='5',class="span4") }}
           </div>
