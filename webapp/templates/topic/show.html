@@ -40,7 +40,10 @@
         <div class="control-group">
           <label class="control-label" for="inputPassword">content</label>
           <div class="controls">
-          <textarea rows="3"></textarea>
+          {{ reply_form.csrf_token }}
+          {{ reply_form.user_id() }}
+          {{ reply_form.topic() }}
+          {{ reply_form.content(row='5',class="span6") }}
           </div>
         </div>
         <div class="control-group">

@@ -30,7 +30,8 @@ def show_topic(topic_id):
 	return render_template('/topic/show.html',
 		topic = topic,
 		category=category,
-		count=topic.count
+		count=topic.count,
+		reply_form=reply_form
 		)
 
 
