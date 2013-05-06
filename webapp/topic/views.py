@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from flask import Blueprint, render_template, g, abort
+from flask import Blueprint, render_template, g, abort, request
 from domain.model.user import User
 from domain import db_session
 from domain.model.topic import Category, Topic, TopicTag, TopicToTag, TopicReply
