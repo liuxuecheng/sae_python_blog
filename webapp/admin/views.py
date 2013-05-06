@@ -131,12 +131,3 @@ def add(id = 0):
 		return render_template('/admin/addtopic.html',
 			topic_form = topic_form,
 			)
-
-
-@admin_page.route('/admin/topic/testtag')
-@login_required
-@is_admin
-def testtag():
-	
-
-	db_session.commit()		
