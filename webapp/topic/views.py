@@ -4,6 +4,7 @@ from domain.model.user import User
 from domain import db_session
 from domain.model.topic import Category, Topic, TopicTag, TopicToTag
 from webapp.user import login_required
+from webapp.topic.form import ReplyForm
 
 
 topic_page = Blueprint('topic_page', __name__)
