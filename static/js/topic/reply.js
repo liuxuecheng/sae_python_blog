@@ -7,9 +7,6 @@ function addcategory(){
 		url:'/topic/reply',
 		dataType:'json',
 		data:$("#reply").serialize(),
-		error:function(){
-			alert('error');
-		}
 		success:function(data){
 			if (data.code == 200){
 				window.location.reload() 
@@ -21,5 +18,5 @@ function addcategory(){
 }
 
 doSave.click(function(){
-	addcategory()
+	addcategory();
 })
