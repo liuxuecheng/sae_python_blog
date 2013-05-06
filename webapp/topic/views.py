@@ -79,5 +79,5 @@ def add_reply():
 		data['code'] = 200
 	else:				
 		data['code'] = 401
-		data['errors'] = category_form.errors	
+		data['errors'] = reply_form.errors	
 	return jsonify(data)
