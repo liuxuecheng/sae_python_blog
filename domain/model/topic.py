@@ -99,4 +99,7 @@ class TopicReply(Base):
 	id = Column(Integer, primary_key=True)
 	topic_id = Column(Integer, default=0)
 	user_id = Column(Integer, default=0)
-	content = Column(Text)			
+	content = Column(Text)
+
+	def __init__(self, content):
+		self.topic_id = content		
