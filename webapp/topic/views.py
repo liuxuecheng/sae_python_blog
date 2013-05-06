@@ -75,6 +75,8 @@ def add_reply():
 			reply = TopicReply(reply_form.content.data)
 			reply.user_id = reply_form.user_id.data
 			reply.topic_id = reply_form.topic_id.data
+			topic = Topic.get(reply_form.topic_id.data)
+			topic.count.reply_num += 1
 			db_session.add(reply)
 			db_session.commit()
 			data['code'] = 200
