@@ -91,7 +91,7 @@ class TopicToTag(Base):
 
 
 @timestamp_mixin
-class TopicReply
+class TopicReply(Base):
 	"""
 	topic reply
 	"""
