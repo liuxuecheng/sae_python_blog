@@ -2,7 +2,7 @@
 from flask import Blueprint, render_template, g, abort
 from domain.model.user import User
 from domain import db_session
-from domain.model.topic import Category, Topic, TopicTag, TopicToTag
+from domain.model.topic import Category, Topic, TopicTag, TopicToTag, TopicReply
 from webapp.user import login_required
 from webapp.topic.form import ReplyForm
 
@@ -65,8 +65,8 @@ def tag(tag_name=''):
 def add_reply():
 	data = {}
 	id = request.form['id']
-	category = Category.query.filter(Category.id == id).first()
-	category_form = CategoryForm(obj = category)
+	reply = TopicReply.query.filter(TopicReply.id == id).first()
+	reply_form = ReplyForm(obj = category)
 	if request.method == 'POST' and category_form.validate():
 		if category:
 			category_form.populate_obj(category)
