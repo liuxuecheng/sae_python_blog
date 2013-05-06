@@ -42,8 +42,8 @@
           <div class="controls">
           {{ reply_form.csrf_token }}
           {{ reply_form.id() }}
-          {{ reply_form.user_id(value={{ g.user.id}}) }}
-          {{ reply_form.topic_id(value={{ topic.id }}) }}
+          {{ reply_form.user_id() }}
+          {{ reply_form.topic_id() }}
           {{ reply_form.content(rows='5',class="span4") }}
           </div>
         </div>
