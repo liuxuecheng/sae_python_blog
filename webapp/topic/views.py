@@ -70,13 +70,14 @@ def add_reply():
 		if reply:
 			reply_form.populate_obj(reply)
 			db_session.commit()
+			data['code'] = 200
 		else:
-			reply = Category(reply_form.content.data)
+			reply = TopicReply(reply_form.content.data)
 			reply.user_id = reply_form.user_id.data
 			reply.topic_id = reply_form.topic_id.data
 			db_session.add(reply)
 			db_session.commit()
-		data['code'] = 200
+			data['code'] = 200
 	else:				
 		data['code'] = 401
 		data['errors'] = reply_form.errors	
