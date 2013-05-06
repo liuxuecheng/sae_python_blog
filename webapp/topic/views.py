@@ -61,6 +61,7 @@ def tag(tag_name=''):
 
 
 @topic_page.route("/topic/reply", methods=("POST","GET"))
+@login_required
 def add_reply():
 	data = {}
 	id = request.form['id']
