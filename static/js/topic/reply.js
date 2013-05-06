@@ -1,7 +1,6 @@
 var doSave = $("#doSave");
 
 function addcategory(){
-	alert('error');
 	$.ajax({
 		type:'POST',
 		url:'/topic/reply',
