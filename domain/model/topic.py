@@ -102,4 +102,4 @@ class TopicReply(Base):
 	content = Column(Text)
 
 	def __init__(self, content):
-		self.topic_id = content		
+		self.content = content		
