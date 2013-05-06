@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
-from package.wtforms import Form, TextField, validators, HiddenField, TextAreaField
+from package.flask_wtf.form import Form
+from package.wtforms import TextField, validators, HiddenField, TextAreaField
 from package.wtforms.validators import Required, Length, ValidationError, Email, EqualTo
 
 
