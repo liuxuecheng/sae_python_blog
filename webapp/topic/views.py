@@ -63,23 +63,4 @@ def tag(tag_name=''):
 @topic_page.route("/topic/reply", methods=("POST","GET"))
 @login_required
 def add_reply():
-	data = {}
-	id = request.form['id']
-	reply = TopicReply.query.filter(TopicReply.id == id).first()
-	reply_form = ReplyForm(obj = reply)
-	if request.method == 'POST' and reply_form.validate():
-		if reply:
-			reply_form.populate_obj(reply)
-			db_session.commit()
-		else:
-			reply = Category(reply_form.name.data)
-			reply.user_id = reply_form.user_id.data
-			reply.topic_id = reply_form.topic_id.data
-			db_session.add(reply)
-			db_session.commit()
-		data['code'] = 200
-	else:				
-		data['code'] = 401
-		data['errors'] = category_form.errors	
-	
-	return jsonify(data)
+	return 1
