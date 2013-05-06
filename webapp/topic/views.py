@@ -71,7 +71,7 @@ def add_reply():
 			reply_form.populate_obj(reply)
 			db_session.commit()
 		else:
-			reply = Category(reply_form.name.data)
+			reply = Category(reply_form.content.data)
 			reply.user_id = reply_form.user_id.data
 			reply.topic_id = reply_form.topic_id.data
 			db_session.add(reply)
