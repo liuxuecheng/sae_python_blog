@@ -87,4 +87,16 @@ class TopicToTag(Base):
 
 	def __init__(self, topic_id, tag_id):
 		self.topic_id = topic_id
-		self.tag_id = tag_id	
+		self.tag_id = tag_id
+
+
+@timestamp_mixin
+class TopicReply
+	"""
+	topic reply
+	"""
+	__tablename__ = 'topic_reply'
+	id = Column(Integer, primary_key=True)
+	topic_id = Column(Integer, default=0)
+	user_id = Column(Integer, default=0)
+	content = Column(Text)			

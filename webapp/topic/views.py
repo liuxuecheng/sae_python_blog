@@ -53,4 +53,9 @@ def tag(tag_name=''):
 		topic = topic,
 		tag=tag,
 		category=category
-		)	
+		)
+
+
+@topic_page.route('/topic/reply', methods=('post',))
+def add_reply():
+	pass			
