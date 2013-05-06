@@ -5,6 +5,9 @@ from package.wtforms.validators import Required, Length, ValidationError, Email,
 
 
 class ReplyForm(Form):
+	id = HiddenField('id', validators=[
+			Required(u'id不能为空!'),
+		])
 	user_id = HiddenField('user_id', validators=[
 			Required(u'user_id不能为空!'),
 		])
