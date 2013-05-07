@@ -39,11 +39,15 @@
       <form class="form-horizontal" id="reply" method="post">
         <div class="control-group">
           <label class="control-label" for="inputPassword">content</label>
-          <div class="controls">
+          <div class="controls" style="position: relative;">
           {{ reply_form.csrf_token }}
           {{ reply_form.id() }}
           {{ reply_form.user_id(value =g.user.id)  }}
           {{ reply_form.topic_id(value =topic.id) }}
+          <div class="alert alert-success" style="position: absolute; with:10px; hight:20px">
+          <button class="close" data-dismiss="alert" type="button">×</button>
+          以下是标签为"ubuntu"的文章列表
+          </div>
           {{ reply_form.content(rows='5',class="span4") }}
           </div>
         </div>
