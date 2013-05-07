@@ -35,3 +35,11 @@
     top: 0;
     width: 0;
 }
+
+.mess-time, .mess-source {
+    margin: -2px 7px 0 0;
+}
+
+.text-sd {
+    color: #BABABA;
+}
