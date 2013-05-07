@@ -22,7 +22,7 @@ def show_topic(topic_id):
 	reply_form = ReplyForm()
 	if topic:
 		category = Category.query.filter(Category.id == topic.category_id).first()
-		reply = TopicReply.query.filter(TopicReply.topic_id == topic.id).all
+		reply = TopicReply.query.filter(TopicReply.topic_id == topic.id).all()
 		topic.count.views += 1
 		db_session.commit()
 	else:
