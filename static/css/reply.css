@@ -38,6 +38,7 @@
 
 .mess-time, .mess-source {
     margin: -2px 7px 0 0;
+    font: 12px/1.75 Arial,sans-serif;
 }
 
 .text-sd {
