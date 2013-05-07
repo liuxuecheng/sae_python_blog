@@ -44,10 +44,10 @@
           {{ reply_form.id() }}
           {{ reply_form.user_id(value =g.user.id)  }}
           {{ reply_form.topic_id(value =topic.id) }}
-          <div class="alert alert-success" style="position: absolute; with:10px; hight:20px">
-          以下是标签为"ubuntu"的文章列表
+          <div class="alert alert-success" style="position: absolute; text-align: center;">
+          请先<a href="/user/login">登录</a>
           </div>
-          <div style="width: 100%; text-align: center; line-height: 200px; color: rgb(0, 0, 0); position: absolute; top: 0pt; height: 100%; background: none repeat scroll 0pt 0pt rgb(204, 204, 204); opacity: 0.2;"></div>
+          <div style="width: 356px; color: rgb(0, 0, 0); position: absolute; top: 0pt; height: 100%; background: none repeat scroll 0pt 0pt rgb(204, 204, 204); opacity: 0.2;"></div>
           {{ reply_form.content(rows='5',class="span4") }}
           </div>
         </div>
