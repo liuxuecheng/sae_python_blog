@@ -1,5 +1,6 @@
 {% extends "/layout/base.html" %}
 {% block title %}{{ topic.title }} - {{ category.name }}{% endblock %}
+{% block css %}<link href="/static/css/reply.css" rel="stylesheet">{% endblock %}
 {% block content %}
 <div class="row">
   <div class="span8">
@@ -70,7 +71,22 @@
                 <img data-src="holder.js/64x64" class="media-object" alt="user_name" style="width: 64px; height: 64px;">
               </a>
               <div class="media-body">
-                {{ r.content }}
+                <div class="mess-main" data-type="0">
+                <div class="mess-content">
+                 <div class="mess-bd">
+               <p class="mess-message">
+    {{ r.content }}
+</p>
+                           </div>
+            <div class="mess-ft">
+                              <a href="javascript:;" data-report-type="3" class="mess-reportblock link-gray reportBlock-trigger">拉黑/举报</a>
+                              <span class="mess-time text-sd">2013-03-26 19:52</span>
+                           </div>
+            <a href="javascript:;" title="删除" class="mess-close icon-close delete-trigger"></a>
+            <i class="mess-arrow"></i>
+         </div>
+       </div>
+               
               </div>
             </div>
             {% endfor %}
