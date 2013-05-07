@@ -1,6 +1,8 @@
 {% extends "/layout/base.html" %}
 {% block title %}{{ topic.title }} - {{ category.name }}{% endblock %}
-{% block css %}<link href="/static/css/reply.css" rel="stylesheet">{% endblock %}
+{% block css %}
+<link href="/static/css/reply.css" rel="stylesheet">
+{% endblock %}
 {% block content %}
 <div class="row">
   <div class="span8">
@@ -41,22 +43,23 @@
         <div class="control-group">
           <label class="control-label" for="inputPassword">content</label>
           <div class="controls" style="position: relative;">
-          {{ reply_form.csrf_token }}
+            {{ reply_form.csrf_token }}
           {{ reply_form.id() }}
           {{ reply_form.user_id(value =g.user.id)  }}
           {{ reply_form.topic_id(value =topic.id) }}
           {% if g.user %}
           {% else %}
-          <div class="alert alert-waiting" style="position: absolute; text-align: center; z-index:100; width: 314px; top:3px; left:2px;">
-          请先<a href="/user/login?next={{ request.path }}">登录</a>
-          </div>
-          <div style="width: 370px; color: rgb(0, 0, 0); position: absolute; top: 0pt; height: 100%; background: none repeat scroll 0pt 0pt rgb(204, 204, 204); opacity: 0.1;"></div>
-          {% endif %}
+            <div class="alert alert-waiting" style="position: absolute; text-align: center; z-index:100; width: 314px; top:3px; left:2px;">
+              请先
+              <a href="/user/login?next={{ request.path }}">登录</a>
+            </div>
+            <div style="width: 370px; color: rgb(0, 0, 0); position: absolute; top: 0pt; height: 100%; background: none repeat scroll 0pt 0pt rgb(204, 204, 204); opacity: 0.1;"></div>
+            {% endif %}
           {{ reply_form.content(rows='5',class="span4") }}
           </div>
         </div>
       </form>
-      <div class="form-horizontal">  
+      <div class="form-horizontal">
         <div class="control-group">
           <div class="controls">
             <button class="btn" id="doSave">确定</button>
@@ -65,33 +68,29 @@
       </div>
       <!-- reply list -->
       <div class="line"></div>
-            {% for r in reply %}
-            <div class="media">
-              <a href="#" class="pull-left">
-                <img data-src="holder.js/64x64" class="media-object" alt="user_name" style="width: 64px; height: 64px;">
-              </a>
-              <div class="media-body">
-                <div class="mess-main" data-type="0">
-                <div class="mess-content">
-                 <div class="mess-bd">
-               <p class="mess-message">
-    {{ r.content }}
-</p>
-                           </div>
-            <div class="mess-ft">
-                              <a href="javascript:;" data-report-type="3" class="text-sd pull-right">举报</a>
-                              <span class="mess-time text-sd">2013-03-26 19:52</span>
-                           </div>
-            <a href="javascript:;" title="删除" class="mess-close icon-close delete-trigger"></a>
-            <i class="mess-arrow"></i>
-         </div>
-       </div>
-               
+      {% for r in reply %}
+      <div class="media">
+        <a href="#" class="pull-left">
+          <img data-src="holder.js/64x64" class="media-object" alt="user_name" style="width: 64px; height: 64px;"></a>
+        <div class="media-body">
+          <div class="mess-main" data-type="0">
+            <div class="mess-content">
+              <div class="mess-bd">
+                <p class="mess-message">{{ r.content }}</p>
               </div>
+              <div class="mess-ft">
+                <small>
+                  <a href="###" class="text-sd pull-right">回复</a>
+                </small>
+                <span class="mess-time text-sd">{{ r.created_at }}</span>
+              </div> <i class="mess-arrow"></i>
             </div>
-            {% endfor %}
-      <!-- /reply -->  
-    </div>
+          </div>
+
+        </div>
+      </div>
+      {% endfor %}
+      <!-- /reply --> </div>
   </div>
   <div class="span4">
     <div class="conr basediv h50">
@@ -108,8 +107,7 @@
         <a class="jiathis_counter_style"></a>
       </div>
       <!-- JiaThis Button END -->
-      <!-- JiaThis Button END --> 
-    </div>
+      <!-- JiaThis Button END --> </div>
   </div>
 </div>
 {% endblock%}
