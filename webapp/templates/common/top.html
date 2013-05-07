@@ -45,7 +45,7 @@
         {% else %}
         <p class="navbar-text pull-right">
           <a href="/user/register" class="navbar-link">注册</a>
-          <a href="/user/login" class="navbar-link">登录</a>
+          <a href="/user/login?next={{ request.path }}" class="navbar-link">登录</a>
         </p>
         {% endif %}
       </div>
