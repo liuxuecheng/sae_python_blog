@@ -44,10 +44,12 @@
           {{ reply_form.id() }}
           {{ reply_form.user_id(value =g.user.id)  }}
           {{ reply_form.topic_id(value =topic.id) }}
+          {% if g.user is None %}
           <div class="alert alert-success" style="position: absolute; text-align: center; z-index:100; width: 314px; top:3px; left:2px;">
           请先<a href="/user/login">登录</a>
           </div>
-          <div style="width: 370px; color: rgb(0, 0, 0); position: absolute; top: 0pt; height: 100%; background: none repeat scroll 0pt 0pt rgb(204, 204, 204); opacity: 0.2;"></div>
+          <div style="width: 370px; color: rgb(0, 0, 0); position: absolute; top: 0pt; height: 100%; background: none repeat scroll 0pt 0pt rgb(204, 204, 204); opacity: 0.1;"></div>
+          {% endif %}
           {{ reply_form.content(rows='5',class="span4") }}
           </div>
         </div>
