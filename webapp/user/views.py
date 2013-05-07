@@ -53,7 +53,7 @@ def login():
 @user_page.route("/user/logout")
 def logout():
 	session.pop('user_id', None)
-	return redirect('/user')
+	return redirect(request.args.get('next') or '/user')
 
 
 @user_page.route("/user")
